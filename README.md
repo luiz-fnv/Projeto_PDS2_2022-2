@@ -29,9 +29,9 @@
 
     <ins>Critérios de aceitação:</ins>
     
-    -Ver os pedidos na ordem em que foram feitos
-    -Ver o endereço onde os pedidos serão entregues
-    -Ser capaz de remover um pedido da lista
-    -Ser capaz de atualizar o estado do pedido como "sendo entregue" ou "concluído"
+    - Ver os pedidos na ordem em que foram feitos
+    - Ver o endereço onde os pedidos serão entregues
+    - Ser capaz de remover um pedido da lista
+    - Ser capaz de atualizar o estado do pedido como "sendo entregue" ou "concluído"
     
 5.
