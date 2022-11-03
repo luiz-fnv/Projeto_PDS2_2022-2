@@ -49,6 +49,12 @@
     - Comunicação com o restaurante/entregador
     - Ter atualizações sobre o pedido
 
+<ins>Critérios de aceitação:</ins>
+    
+    - Ver o cardápio com os preços e avaliações 
+    - Comunicação com o restaurante/entregador
+    - Ter atualizações sobre o pedido
+
 <ins>Integrantes:</ins>
     
     - Fábio da Silva Duarte
