@@ -48,3 +48,10 @@
     - Ver o cardápio com os preços e avaliações 
     - Comunicação com o restaurante/entregador
     - Ter atualizações sobre o pedido
+
+<ins>Integrantes:</ins>
+    
+    - Fábio da Silva Duarte
+    - João Henrique Menezes 
+    - Luiz Felipe Nogueira Varandas
+    - Luis Fernando Raposo
