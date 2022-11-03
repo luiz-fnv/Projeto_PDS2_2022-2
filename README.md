@@ -54,5 +54,6 @@
     
     - Fábio da Silva Duarte
     - João Henrique Menezes 
-    - Luiz Felipe Nogueira Varandas
     - Luis Fernando Raposo
+    - Luiz Felipe Nogueira Varandas
+  
