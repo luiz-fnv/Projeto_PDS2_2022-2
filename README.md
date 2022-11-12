@@ -41,11 +41,10 @@
     - Ver os produtos mais e menos vendidos 
     - Ver a avaliação desses produtos
     
-6. Como cliente que quer receber o pedido em casa, gostaria de ser capaz de visualizar o cardápio, contactar o restaurante ou entregador para fazer um pedido e saber do seu estado até sua chegada, bem como de avaliar minha satisfação em relação ao que comi, para decidir meu pedido, ter um espaço para esboçar minha opinião e para ter uma noção de quanto tempo deve demorar para a entrega.
+6. Como cliente que quer receber o pedido em casa, gostaria de ser capaz de contactar o restaurante ou entregador para alterar meu pedido e saber do seu estado até sua chegada, bem como ter uma noção de quanto tempo deve demorar para a entrega.
 
     <ins>Critérios de aceitação:</ins>
     
-    - Ver o cardápio com os preços e avaliações 
     - Comunicação com o restaurante/entregador
     - Ter atualizações sobre o pedido
 
