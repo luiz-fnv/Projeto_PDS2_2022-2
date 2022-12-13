@@ -14,6 +14,9 @@ class Restaurante{
         double calcular_lucro_dia();
         void mostrar_vendas();
         void finalizar_dia();
-}
+        void add_produto();
+        void rem_produto();
+        double avalicacao_prod(std::vector<Produto>);
+};
 
 #endif
