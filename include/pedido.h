@@ -6,12 +6,13 @@
 
 class Pedido{
   private:
-    std::vector<std::vector<Produto>> _VetorDeProdutos;
+    std::vector<Produto> _VetorDeProdutos;
     std::string _estado;
   public:
-    void adiciona_pedido(std::vector<Produto> novo_pedido);
-    void remove_pedido(std::vector<Produto> pedido_remover);
+    Pedido();
+    void adiciona_pedido(Produto novo_pedido);
     std::string get_estado();
+    void atualiza_estado();
 };
 
 #endif
