@@ -2,11 +2,10 @@
 #define _PEDIDO_H_
 
 #include "produto.h"
-#include <vector>
 
 class Pedido{
   private:
-    std::vector<std::vector<Produto>> _listapedidos;
+    std::vector<std::vector<Produto>> VetorDeProdutos;
     std::string _estado;
   public:
     Pedido(std::vector<std::vector<Produto>> listapedidos, std::string estado);

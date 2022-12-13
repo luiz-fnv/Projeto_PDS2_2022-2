@@ -22,5 +22,4 @@ class Cadastro{
     int get_cargo();
 };
 
-
 #endif

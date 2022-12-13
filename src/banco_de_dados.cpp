@@ -4,20 +4,20 @@ void Banco_de_dados::inserir_cadastro(std::string nome, std::string senha, int c
   std::string endereco = "teste";
   switch(cargo){
     case c_Cliente:
-      Banco_de_Cadastros.push_back(Cliente(nome,senha,endereco));
+      BancoDeCadastros.push_back(Cliente(nome,senha,endereco));
       break;
     case c_Funcionario:
-      Banco_de_Cadastros.push_back(Funcionario(nome,senha));
+      BancoDeCadastros.push_back(Funcionario(nome,senha));
       break;
     case c_Gerente:
-      Banco_de_Cadastros.push_back(Gerente(nome,senha));
+      BancoDeCadastros.push_back(Gerente(nome,senha));
       break;
   }
 }
 
 bool Banco_de_dados::check_nome_login(std::string nome){
-  for(int i=0; i != Banco_de_Cadastros.size(); ++i){
-    if (Banco_de_Cadastros.at(i).get_nome() == nome){
+  for(unsigned int i=0; i != BancoDeCadastros.size(); ++i){
+    if (BancoDeCadastros.at(i).get_nome() == nome){
       return 1;
     }
   }
@@ -34,9 +34,11 @@ bool Banco_de_dados::check_senha_login(Cadastro login, std::string senha){
 }
 
 Cadastro Banco_de_dados::efetuar_login(std::string nome){
-  for(int i=0; i != Banco_de_Cadastros.size(); ++i){
-    if (Banco_de_Cadastros.at(i).get_nome() == nome){
-      return Banco_de_Cadastros.at(i);
+  Cadastro cadastro;
+  for(unsigned int i=0; i != BancoDeCadastros.size(); ++i){
+    if (BancoDeCadastros.at(i).get_nome() == nome){
+      cadastro = BancoDeCadastros.at(i);
     }
   }
+  return cadastro;
 }

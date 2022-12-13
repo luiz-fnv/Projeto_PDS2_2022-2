@@ -1,14 +1,13 @@
 #include "produto.h"
 #include <cmath>
 
-Produto::Produto(std::string nome, double lucro, double avaliacao,
-                double preco){
-                    _nome = nome;
-                    _lucro = lucro;
-                    _avaliacao = avaliacao;
-                    _preco = preco;
-                    _n_vendas = 0;
-                }
+Produto::Produto(std::string nome, double lucro, double avaliacao, double preco){
+  _nome = nome;
+  _lucro = lucro;
+  _avaliacao = avaliacao;
+  _preco = preco;
+  _n_vendas = 0;
+}
 
 int Produto::get_n_vendas(){
   return _n_vendas;

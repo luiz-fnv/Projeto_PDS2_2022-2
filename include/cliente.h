@@ -15,5 +15,4 @@ class Cliente : public Cadastro{
     void check_entrega(Pedido entrega);
 };
 
-
 #endif

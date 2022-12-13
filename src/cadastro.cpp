@@ -9,14 +9,15 @@ std::string Cadastro::get_senha(){
 }
 
 std::string Cadastro::get_cargo_txt(){
-  if(_cargo == c_Cliente){
-    return "cliente";
-  }
-  if(_cargo == c_Funcionario){
-    return "funcionário";
-  }
-  if(_cargo == c_Gerente){
-    return "gerente";
+  switch(_cargo){
+    case c_Cliente:
+      return "cliente";
+    case c_Funcionario:
+      return "funcionário";
+    case c_Gerente:
+      return "gerente";
+    default:
+      return " ";
   }
 }
 

@@ -29,7 +29,49 @@ int main(){
   std::cout << "Seja bem vindo " << login.get_cargo_txt() << " " << login.get_nome() << ".\n";
 
   //operações
-  // std::string command;
-  // while(command!="stop"){
-  // }
+  std::string command;
+  while(command != "stop"){
+
+    switch(login.get_cargo()){
+      case c_Cliente:
+        //operações cliente
+        std::cout << "1 - Sair";
+
+        std::cin >> command;
+        switch(std::stoi(command)){
+          case 1:
+            command = "stop";
+            break;
+        }
+        break;
+
+
+      case c_Funcionario:
+        //operações funcionario
+        std::cout << "1 - Sair";
+
+        std::cin >> command;
+        switch(std::stoi(command)){
+          case 1:
+            command = "stop";
+            break;
+        }
+        break;
+
+
+      case c_Gerente:
+        //operações gerente
+        std::cout << "1 - Sair";
+
+        std::cin >> command;
+        switch(std::stoi(command)){
+          case 1:
+            command = "stop";
+            break;
+        }
+        break;
+
+
+    }
+  }
 }

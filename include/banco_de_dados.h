@@ -9,15 +9,32 @@
 #include "funcionario.h"
 #include "gerente.h"
 
+#include "pedido.h"
+
 
 class Banco_de_dados{
   private:
-    std::vector<Cadastro> Banco_de_Cadastros;
+    std::vector<Cadastro> BancoDeCadastros;
+    std::vector<Pedido> BancoDePedidos;
+    std::vector<Produto> Cardapio;
   public:
+    //operações com Banco de Cadastros
     bool check_nome_login(std::string nome);
     bool check_senha_login(Cadastro login, std::string senha);
     Cadastro efetuar_login(std::string nome);
     void inserir_cadastro(std::string nome, std::string senha, int cargo);
+    //operações com Banco de Pedidos (todas não feitas)
+    void inserir_pedido();
+    void alterar_pedido();
+    void calcular_lucro();
+    void calcular_mais_pedido();
+    void terminar_dia();
+    void mostrar_avaliacoes();
+    //operações com Cardapio (todas não feitas)
+    void inserir_produto();
+    void remover_produto();
+    void mostrar_cardapio();
+    
 };
 
 #endif

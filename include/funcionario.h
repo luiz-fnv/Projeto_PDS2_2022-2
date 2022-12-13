@@ -8,5 +8,4 @@ class Funcionario : public Cadastro{
     Funcionario(std::string nome, std::string senha);
 };
 
-
 #endif
