@@ -6,7 +6,7 @@ int main(){
   Banco_de_dados data;
   Cadastro login;
 
-  data.inserir_cadastro("Jorge","123",2);
+  data.inserir_cadastro("Jorge","123",c_Gerente);
 
   //login
   std::string nome_login;
