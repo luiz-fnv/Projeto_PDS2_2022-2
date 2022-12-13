@@ -31,11 +31,12 @@ int main(){
   //operações
   std::string command;
   while(command != "stop"){
+    std::cout << "Digite o número da operação que quiser realizar:\n";
 
     switch(login.get_cargo()){
       case c_Cliente:
         //operações cliente
-        std::cout << "1 - Sair";
+        std::cout << "1 - Sair\n";
 
         std::cin >> command;
         switch(std::stoi(command)){
@@ -48,7 +49,7 @@ int main(){
 
       case c_Funcionario:
         //operações funcionario
-        std::cout << "1 - Sair";
+        std::cout << "1 - Sair\n";
 
         std::cin >> command;
         switch(std::stoi(command)){
@@ -61,7 +62,7 @@ int main(){
 
       case c_Gerente:
         //operações gerente
-        std::cout << "1 - Sair";
+        std::cout << "1 - Sair\n";
 
         std::cin >> command;
         switch(std::stoi(command)){
