@@ -3,6 +3,7 @@
 
 #include "produto.h"
 #include <vector>
+#include <iostream>
 
 class Pedido{
   private:
