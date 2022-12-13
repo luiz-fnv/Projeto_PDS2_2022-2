@@ -1,4 +1,5 @@
 #include "cliente.h"
+#include <iostream>
 
 Cliente::Cliente(std::string nome, std::string endereco){
     _nome = nome;
