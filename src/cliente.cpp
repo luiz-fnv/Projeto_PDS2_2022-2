@@ -1,4 +1,5 @@
 #include "cliente.h"
+#include "pedido.h"
 #include <iostream>
 
 Cliente::Cliente(std::string nome, std::string senha, std::string endereco){
