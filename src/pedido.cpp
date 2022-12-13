@@ -15,7 +15,7 @@ std::string Pedido::get_estado(){
 
 void Pedido::atualiza_estado(){
     std::string atualizacao;
-    cin >> atualizacao;
+    std::cin >> atualizacao;
     _estado = atualizacao;
     return;
 }
