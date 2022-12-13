@@ -5,18 +5,18 @@
 #include <vector>
 
 class Restaurante{
-    private:
-        double _lucro;
-        double _avaliacao;
-        std::vector<Produto> _cardapio;
-    public:
-        Restaurante(double lucro, double avaliacao, std::vector<Produto> cardapio);
-        double calcular_lucro_dia();
-        void mostrar_vendas();
-        void finalizar_dia();
-        void add_produto();
-        void rem_produto();
-        double avalicacao_prod(std::vector<Produto>);
+  private:
+    double _lucro;
+    double _avaliacao;
+    std::vector<Produto> _cardapio;
+  public:
+    Restaurante(double lucro, double avaliacao, std::vector<Produto> cardapio);
+    double calcular_lucro_dia();
+    void mostrar_vendas();
+    void finalizar_dia();
+    void add_produto();
+    void rem_produto();
+    double avalicacao_prod(std::vector<Produto>);
 };
 
 #endif

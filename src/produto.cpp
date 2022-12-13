@@ -11,19 +11,19 @@ Produto::Produto(std::string nome, double lucro, double avaliacao,
                 }
 
 int Produto::get_n_vendas(){
-    return _n_vendas;
+  return _n_vendas;
 }
 
 double Produto::get_preco(){
-    return _preco;
+  return _preco;
 }
 
 double Produto::get_lucro(){
-    return _lucro;
+  return _lucro;
 }
 
 double Produto::get_avaliacao(){
-    double estrelas;
-    estrelas = std::ceil(_avaliacao * 100.0)/100.0;
-    return estrelas;
+  double estrelas;
+  estrelas = std::ceil(_avaliacao * 100.0)/100.0;
+  return estrelas;
 }

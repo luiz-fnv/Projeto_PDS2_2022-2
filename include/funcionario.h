@@ -4,7 +4,7 @@
 #include "cadastro.h"
 
 class Funcionario : public Cadastro{
-    public:
+  public:
     Funcionario(std::string nome, std::string senha);
 };
 
