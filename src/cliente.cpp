@@ -1,9 +1,11 @@
 #include "cliente.h"
 #include <iostream>
 
-Cliente::Cliente(std::string nome, std::string endereco){
+Cliente::Cliente(std::string nome, std::string senha, std::string endereco){
     _nome = nome;
+    _senha = senha;
     _endereco = endereco;
+    _cargo = c_Cliente;
 }
 
 std::string Cliente::get_endereco(){

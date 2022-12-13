@@ -1,19 +1,18 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
-#include "pessoa.h"
+#include "cadastro.h"
 #include "pedido.h"
-#include <string>
 
-class Cliente:public Pessoa{
+class Cliente : public Cadastro{
     private:
         std::string _endereco;
 
     public:
+        Cliente(std::string nome, std::string senha, std::string endereco);
         std::string get_endereco();
         void avaliar_pedido();
         void check_entrega(Pedido entrega);
-        Cliente(std::string nome, std::string endereco);
 };
 
 
