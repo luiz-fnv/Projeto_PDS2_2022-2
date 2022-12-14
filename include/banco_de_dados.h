@@ -15,15 +15,12 @@
 
 class Banco_de_dados{
   private:
-    std::vector<Conta> BancoDeContas;
     std::vector<Pedido> BancoDePedidos;
   public:
     Cardapio _cardapio;
+    std::vector<Conta> _BancoDeContas;
 
     //operações com Banco de Contas
-    bool check_nome_login(std::string nome);
-    bool check_senha_login(Conta login, std::string senha);
-    Conta efetuar_login(std::string nome);
     void inserir_conta(std::string nome, std::string senha, int cargo);
     //operações com Banco de Pedidos (todas não feitas)
     void inserir_pedido(Pedido novo_pedido);

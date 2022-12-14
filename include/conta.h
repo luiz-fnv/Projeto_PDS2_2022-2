@@ -8,7 +8,8 @@
 enum Cargo{
   c_Cliente,
   c_Funcionario,
-  c_Gerente
+  c_Gerente,
+  c_Nenhum
 };
 
 class Conta{
