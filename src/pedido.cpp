@@ -18,6 +18,12 @@ void Pedido::cancela_estado(){
     return;
 }
 
+void Pedido::mostrar_produtos_pedido(){
+    for(unsigned int aux = 0; aux < _VetorDeProdutos.size(); aux++)
+        std::cout << _VetorDeProdutos.at(aux) << std::endl;
+    return;
+}
+
 std::vector<std::string> Pedido::get_pedido(){
     std::vector<std::string> produtos;
     produtos = _VetorDeProdutos;

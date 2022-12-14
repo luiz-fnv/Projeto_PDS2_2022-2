@@ -32,25 +32,57 @@ int main(){
       switch(nivel_de_acesso){
         case c_Cliente:
           //operações cliente
-          std::cout << "1 - Sair\n";
+          std::cout << "1 - Mostrar produtos do cardápio em ordem alfabética\n";
+          std::cout << "2 - Fazer um pedido\n";
+          std::cout << "3 - Avaliar um pedido\n";
+          std::cout << "4 - Sair\n";
 
           std::cin >> command;
           switch(command){
-            case 1:
+            case 1:{
+              data._cardapio.mostrar_cardapio_alfabetico();
+              break;
+            }
+            case 2:{
+              
+              break;
+            }
+            case 3:{
+
+              break;
+            }
+            case 4:{
               nivel_de_acesso = c_Nenhum;
               break;
+            }
           }
           break;
 
         case c_Funcionario:
           //operações funcionario
-          std::cout << "1 - Sair\n";
+          std::cout << "1 - Visualizar pedidos\n";
+          std::cout << "2 - Alterar situação de um pedido\n";
+          std::cout << "3 - Cancelar um pedido\n";
+          std::cout << "4 - Sair\n";
 
           std::cin >> command;
           switch(command){
-            case 1:
+            case 1:{
+                data.mostrar_pedidos();
+              break;
+            }
+            case 2:{
+
+              break;
+            }
+            case 3:{
+
+              break;
+            }
+            case 4:{
               nivel_de_acesso = c_Nenhum;
               break;
+            }
           }
           break;
 

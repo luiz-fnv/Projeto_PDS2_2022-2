@@ -30,6 +30,7 @@ class Banco_de_dados{
     void calcular_lucro();
     void calcular_mais_pedido();
     void terminar_dia();
+    void mostrar_pedidos();
     void mostrar_avaliacoes();
 
     Cardapio get_cardapio();

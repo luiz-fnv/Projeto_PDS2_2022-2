@@ -62,6 +62,14 @@ void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
   return;
 }
 
+void Banco_de_dados::mostrar_pedidos(){
+  for(unsigned int aux = 0; aux < BancoDePedidos.size(); aux++){
+    std::cout << "Pedido " << aux+1 << ":" << std::endl;
+    BancoDePedidos.at(aux).mostrar_produtos_pedido();
+  }
+  return;
+}
+
 Cardapio Banco_de_dados::get_cardapio(){
   return _cardapio;
 }
