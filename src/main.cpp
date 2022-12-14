@@ -62,8 +62,9 @@ int main(){
       case c_Gerente:
         //operações gerente
         std::cout << "1 - Mostrar produtos mais vendidos do cardápio\n";
-        std::cout << "2 - Alterar cardápio \n";
-        std::cout << "3 - Sair\n";
+        std::cout << "2 - Mostrar produtos do cardápio em ordem alfabética\n";
+        std::cout << "3 - Alterar cardápio \n";
+        std::cout << "4 - Sair\n";
 
         std::cin >> command;
         switch(std::stoi(command)){
@@ -72,6 +73,10 @@ int main(){
             break;
           }
           case 2:{
+            data._cardapio.mostrar_cardapio_alfabetico();
+            break;
+          }
+          case 3:{
             std::cout << "1 - Adicionar Produto\n";
             std::cout << "2 - Remover Produto\n";
             std::cout << "3 - Voltar\n";
@@ -92,7 +97,7 @@ int main(){
             }
             break;
           }
-          case 3:{
+          case 4:{
             command = "stop";
             break;
           }
