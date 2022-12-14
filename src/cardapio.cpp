@@ -41,11 +41,16 @@ void Cardapio::mostrar_cardapio_alfabetico(){
   Cardapio temporario;
   temporario._cardapio = _cardapio;
   std::vector<std::string> nomes;
-  for(int i = 0; i < _cardapio.size(); i++){
+  for(unsigned long int i = 0; i < _cardapio.size(); i++){
     nomes.push_back(temporario._cardapio[i].get_nome());
   }
   std::sort(nomes.begin(),nomes.end(),sort_nomes);
-  for(int i = 0; i < nomes.size(); i++){
-    std::cout << nomes[i] << std::endl;
+  for(unsigned long int i = 0; i < nomes.size(); i++){
+    //std::cout << nomes[i] << std::endl;
+    for(auto j = _cardapio.begin(); j != _cardapio.end(); j++){
+      if(nomes[i] == (*j).get_nome()){
+        std::cout << (*j).descricao_produto();
+      }
+    }
   }
 }
