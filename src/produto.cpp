@@ -26,3 +26,11 @@ double Produto::get_avaliacao(){
   estrelas = std::ceil(_avaliacao * 100.0)/100.0;
   return estrelas;
 }
+
+void Produto::mudar_avaliacao(int nova_avaliacao){
+  historico_avaliacoes.push_back(nova_avaliacao);
+  for(unsigned int aux = 0; aux < historico_avaliacoes.size(); aux++)
+    _avaliacao += historico_avaliacoes.at(aux);
+  _avaliacao = _avaliacao/historico_avaliacoes.size();
+  return;
+}

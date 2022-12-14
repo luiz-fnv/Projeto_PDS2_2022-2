@@ -3,6 +3,8 @@
 
 #include "cadastro.h"
 #include "pedido.h"
+#include "produto.h"
+#include <iostream>
 
 class Cliente : public Cadastro{
   private:
@@ -11,7 +13,7 @@ class Cliente : public Cadastro{
   public:
     Cliente(std::string nome, std::string senha, std::string endereco);
     std::string get_endereco();
-    void avaliar_pedido();
+    void avaliar_pedido(Produto produto);
     void check_entrega(Pedido entrega);
 };
 

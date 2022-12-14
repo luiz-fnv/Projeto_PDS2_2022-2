@@ -1,6 +1,4 @@
 #include "cliente.h"
-#include "pedido.h"
-#include <iostream>
 
 Cliente::Cliente(std::string nome, std::string senha, std::string endereco){
   _nome = nome;
@@ -13,10 +11,11 @@ std::string Cliente::get_endereco(){
   return _endereco;
 }
 
-void Cliente::avaliar_pedido(){
+void Cliente::avaliar_pedido(Produto produto){
   int avaliacao;
   std::cout << "Avalie seu pedido com uma nota de 1 a 5:"<< std::endl;
   std::cin >> avaliacao;
+  produto.mudar_avaliacao(avaliacao);
   return;
 }
 
