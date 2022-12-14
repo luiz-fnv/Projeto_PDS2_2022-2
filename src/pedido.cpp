@@ -19,5 +19,7 @@ void Pedido::cancela_estado(){
 }
 
 std::vector<std::string> Pedido::get_pedido(){
-    return _VetorDeProdutos;
+    std::vector<std::string> produtos;
+    produtos = _VetorDeProdutos;
+    return produtos;
 }

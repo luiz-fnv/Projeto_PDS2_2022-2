@@ -1,4 +1,6 @@
 #include "cardapio.h"
+#include <algorithm>
+#include <iostream>
 
 void Cardapio::inserir_produto(){
   std::cout << "Digite o nome do produto a ser adicionado:\n";
@@ -30,6 +32,20 @@ void Cardapio::remover_produto(){
   return;
 }
 
+bool sort_nomes(std::string a, std::string b){
+  return a<b;
+}
+
 void Cardapio::mostrar_cardapio_alfabetico(){
-  //TODO
+  //TESTE
+  Cardapio temporario;
+  temporario._cardapio = _cardapio;
+  std::vector<std::string> nomes;
+  for(int i = 0; i < _cardapio.size(); i++){
+    nomes.push_back(temporario._cardapio[i].get_nome());
+  }
+  std::sort(nomes.begin(),nomes.end(),sort_nomes);
+  for(int i = 0; i < nomes.size(); i++){
+    std::cout << nomes[i] << std::endl;
+  }
 }
