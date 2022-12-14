@@ -22,7 +22,7 @@ int main(){
         break;
       case 2:
         nivel_de_acesso = c_Nenhum;
-        cadastrar(data);
+        data = cadastrar(data);
         break;
       case 3:
         return 1;
