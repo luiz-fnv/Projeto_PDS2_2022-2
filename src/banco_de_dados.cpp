@@ -64,8 +64,8 @@ void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
 
 void Banco_de_dados::mostrar_pedidos(){
   for(unsigned int aux = 0; aux < BancoDePedidos.size(); aux++){
-    std::cout << "Pedido " << aux+1 << ":" << std::endl;
-    BancoDePedidos.at(aux).mostrar_produtos_pedido();
+    std::cout << "Pedido" << " " << aux+1 << ":" << std::endl;
+    BancoDePedidos.at(aux).mostra_produtos_pedido();
   }
   return;
 }

@@ -18,7 +18,7 @@ void Pedido::cancela_estado(){
     return;
 }
 
-void Pedido::mostrar_produtos_pedido(){
+void Pedido::mostra_produtos_pedido(){
     for(unsigned int aux = 0; aux < _VetorDeProdutos.size(); aux++)
         std::cout << _VetorDeProdutos.at(aux) << std::endl;
     return;

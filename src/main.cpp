@@ -43,8 +43,9 @@ int main(){
               data._cardapio.mostrar_cardapio_alfabetico();
               break;
             }
+            //implementar o resto
             case 2:{
-              
+  
               break;
             }
             case 3:{

@@ -27,11 +27,11 @@ class Banco_de_dados{
     void alterar_pedido(Pedido pedido_alterado);
     void concluir_pedido(Pedido pedido_concluido);
     void cancelar_pedido(Pedido pedido_cancelado);
-    void calcular_lucro();
-    void calcular_mais_pedido();
-    void terminar_dia();
+    void calcular_lucro();//nao feito
+    void calcular_mais_pedido();//nao feito
+    void terminar_dia();//nao feito
     void mostrar_pedidos();
-    void mostrar_avaliacoes();
+    void mostrar_avaliacoes();//nao feito
 
     Cardapio get_cardapio();
     
