@@ -2,18 +2,18 @@
 #define _PEDIDO_H_
 
 #include "produto.h"
-#include <vector>
 #include <iostream>
 
 class Pedido{
   private:
-    std::vector<Produto> _VetorDeProdutos;
+    std::vector<std::string> _VetorDeProdutos;
     std::string _estado;
   public:
     Pedido();
-    void adiciona_pedido(Produto novo_pedido);
     std::string get_estado();
-    void atualiza_estado();
+    void atualiza_estado(std::string atualizacao);
+    void cancela_estado();
+    std::vector<std::string> get_pedido();
 };
 
 #endif

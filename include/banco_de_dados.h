@@ -26,8 +26,10 @@ class Banco_de_dados{
     Conta efetuar_login(std::string nome);
     void inserir_conta(std::string nome, std::string senha, int cargo);
     //operações com Banco de Pedidos (todas não feitas)
-    void inserir_pedido();
-    void alterar_pedido();
+    void inserir_pedido(Pedido novo_pedido);
+    void alterar_pedido(Pedido pedido_alterado);
+    void concluir_pedido(Pedido pedido_concluido);
+    void cancelar_pedido(Pedido pedido_cancelado);
     void calcular_lucro();
     void calcular_mais_pedido();
     void terminar_dia();
