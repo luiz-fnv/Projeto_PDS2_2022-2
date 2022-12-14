@@ -1,11 +1,10 @@
-#include "cadastro.h"
+#include "conta.h"
 #include "banco_de_dados.h"
-#include <iostream>
 
 int main(){
   Banco_de_dados data;
 
-  data.inserir_cadastro("Jorge","123",c_Gerente);
+  data.inserir_conta("Jorge","123",c_Gerente);
   
 
   //login
@@ -19,7 +18,7 @@ int main(){
   if(data.check_nome_login(nome_login) == 0){
     return 0;
   }
-  Cadastro login = data.efetuar_login(nome_login);
+  Conta login = data.efetuar_login(nome_login);
   std::cout << "Digite sua senha:\n";
   std::cin >> senha_login;
 
@@ -69,14 +68,14 @@ int main(){
         std::cin >> command;
         switch(std::stoi(command)){
           case 1:{
-            login.mostrar_cardapio_mais_vendidos(data.get_cardapio());
+            // login.mostrar_cardapio_mais_vendidos(data.get_cardapio());
             break;
           }
           case 2:{
             std::cout << "1 - Adicionar Produto\n";
             std::cout << "2 - Remover Produto\n";
             std::cout << "3 - Voltar\n";
-            
+
             std::cin >> command;
             switch(std::stoi(command)){
               case 1:{

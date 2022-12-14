@@ -1,5 +1,5 @@
-#ifndef CADASTRO_H
-#define CADASTRO_H
+#ifndef CONTA_H
+#define CONTA_H
 
 #include <string>
 #include <iostream>
@@ -11,7 +11,7 @@ enum Cargo{
   c_Gerente
 };
 
-class Cadastro{
+class Conta{
   protected:
     std::string _nome;
     std::string _senha;
@@ -24,7 +24,7 @@ class Cadastro{
     int get_cargo() const;
 
     //gerente
-    void mostrar_cardapio_mais_vendidos(Cardapio cardapio) const;
+    // void mostrar_cardapio_mais_vendidos(Cardapio cardapio) const;
 
 };
 

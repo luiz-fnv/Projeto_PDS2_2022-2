@@ -1,12 +1,12 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
-#include "cadastro.h"
+#include "conta.h"
 #include "pedido.h"
 #include "produto.h"
 #include <iostream>
 
-class Cliente : public Cadastro{
+class Cliente : public Conta{
   private:
     std::string _endereco;
   public:

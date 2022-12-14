@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-#include "cadastro.h"
+#include "conta.h"
 
-class Gerente : public Cadastro{
+class Gerente : public Conta{
   public:
     Gerente(std::string nome, std::string senha);
 };

@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 
-#include "cadastro.h"
+#include "conta.h"
 #include "cliente.h"
 #include "funcionario.h"
 #include "gerente.h"
@@ -15,16 +15,16 @@
 
 class Banco_de_dados{
   private:
-    std::vector<Cadastro> BancoDeCadastros;
+    std::vector<Conta> BancoDeContas;
     std::vector<Pedido> BancoDePedidos;
   public:
     Cardapio _cardapio;
-    
-    //operações com Banco de Cadastros
+
+    //operações com Banco de Contas
     bool check_nome_login(std::string nome);
-    bool check_senha_login(Cadastro login, std::string senha);
-    Cadastro efetuar_login(std::string nome);
-    void inserir_cadastro(std::string nome, std::string senha, int cargo);
+    bool check_senha_login(Conta login, std::string senha);
+    Conta efetuar_login(std::string nome);
+    void inserir_conta(std::string nome, std::string senha, int cargo);
     //operações com Banco de Pedidos (todas não feitas)
     void inserir_pedido();
     void alterar_pedido();
