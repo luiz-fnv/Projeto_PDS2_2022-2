@@ -6,6 +6,7 @@ int main(){
   Banco_de_dados data;
   data.inserir_conta("Gerente_a","12984",c_Gerente);
   data.inserir_conta("Funcionario_a","42710",c_Funcionario);
+  data.inserir_conta("Cliente_a", "15597", c_Cliente);
 
   while(1){
     std::cout << "Bem vindo ao sistema eletrônico do restaurante XXX, digite o número correspondente à operação que quiser realizar.\n";
