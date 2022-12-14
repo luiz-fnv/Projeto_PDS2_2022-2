@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <iostream>
 
 #include "produto.h"
 
@@ -13,8 +14,8 @@ class Cardapio{
   public:
     void mostrar_cardapio_alfabetico();
     std::string cardapio_mais_vendidos();
-    void inserir_produto(Produto produto);
-    void remover_produto(std::string nome_do_produto);
+    void inserir_produto();
+    void remover_produto();
 };
 
 #endif

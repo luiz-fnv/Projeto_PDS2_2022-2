@@ -17,8 +17,9 @@ class Banco_de_dados{
   private:
     std::vector<Cadastro> BancoDeCadastros;
     std::vector<Pedido> BancoDePedidos;
-    Cardapio _cardapio;
   public:
+    Cardapio _cardapio;
+    
     //operações com Banco de Cadastros
     bool check_nome_login(std::string nome);
     bool check_senha_login(Cadastro login, std::string senha);

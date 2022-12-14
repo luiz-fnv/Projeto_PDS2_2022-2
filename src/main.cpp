@@ -6,6 +6,7 @@ int main(){
   Banco_de_dados data;
 
   data.inserir_cadastro("Jorge","123",c_Gerente);
+  
 
   //login
   std::string nome_login;
@@ -29,7 +30,6 @@ int main(){
 
   //operações
   std::string command;
-  char n;
   while(command != "stop"){
     std::cout << "Digite o número da operação que quiser realizar:\n";
 
@@ -63,18 +63,42 @@ int main(){
       case c_Gerente:
         //operações gerente
         std::cout << "1 - Mostrar produtos mais vendidos do cardápio\n";
-        std::cout << "2 - Sair\n";
+        std::cout << "2 - Alterar cardápio \n";
+        std::cout << "3 - Sair\n";
 
         std::cin >> command;
         switch(std::stoi(command)){
-          case 1:
+          case 1:{
             login.mostrar_cardapio_mais_vendidos(data.get_cardapio());
             break;
-          case 2:
+          }
+          case 2:{
+            std::cout << "1 - Adicionar Produto\n";
+            std::cout << "2 - Remover Produto\n";
+            std::cout << "3 - Voltar\n";
+            
+            std::cin >> command;
+            switch(std::stoi(command)){
+              case 1:{
+                data._cardapio.inserir_produto();
+                break;
+              }
+              case 2:{
+                data._cardapio.remover_produto();
+                break;
+              }
+              case 3:{
+                break;
+              }
+            }
+            break;
+          }
+          case 3:{
             command = "stop";
             break;
+          }
+          break;
         }
-        break;
     }
   }
 }
