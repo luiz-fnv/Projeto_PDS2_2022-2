@@ -1,6 +1,8 @@
 #ifndef GERENTE_H
 #define GERENTE_H
 
+#include <iostream>
+
 #include "cadastro.h"
 
 class Gerente : public Cadastro{

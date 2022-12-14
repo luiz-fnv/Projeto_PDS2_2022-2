@@ -2,25 +2,26 @@
 #define PRODUTO_H
 
 #include <string>
+#include <sstream>
 #include <vector>
 
 class Produto{
   private:
     std::string _nome;
-    double _lucro;
-    double _avaliacao;
     double _preco;
-    int _n_vendas;
+    unsigned int _vendidos;
     std::vector<int> historico_avaliacoes;
+    double _avaliacao;
 
   public:
-    int get_n_vendas();
+    Produto(std::string nome, double preco);
+    unsigned int get_vendidos();
+    std::string get_nome();
     double get_preco();
     double get_lucro();
     double get_avaliacao();
     void mudar_avaliacao(int nova_avaliacao);
-    Produto(std::string nome, double lucro, double avaliacao,
-            double preco);
+    std::string descricao_produto();
 };
 
 #endif

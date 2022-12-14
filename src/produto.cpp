@@ -1,24 +1,23 @@
 #include "produto.h"
 #include <cmath>
 
-Produto::Produto(std::string nome, double lucro, double avaliacao, double preco){
+Produto::Produto(std::string nome, double preco){
   _nome = nome;
-  _lucro = lucro;
-  _avaliacao = avaliacao;
   _preco = preco;
-  _n_vendas = 0;
+  _vendidos = 0;
+  _avaliacao = 0;
 }
 
-int Produto::get_n_vendas(){
-  return _n_vendas;
+unsigned int Produto::get_vendidos(){
+  return _vendidos;
 }
 
 double Produto::get_preco(){
   return _preco;
 }
 
-double Produto::get_lucro(){
-  return _lucro;
+std::string Produto::get_nome(){
+  return _nome;
 }
 
 double Produto::get_avaliacao(){
@@ -29,8 +28,16 @@ double Produto::get_avaliacao(){
 
 void Produto::mudar_avaliacao(int nova_avaliacao){
   historico_avaliacoes.push_back(nova_avaliacao);
-  for(unsigned int aux = 0; aux < historico_avaliacoes.size(); aux++)
+  for(unsigned int aux = 0; aux < historico_avaliacoes.size(); aux++){
     _avaliacao += historico_avaliacoes.at(aux);
+  }
   _avaliacao = _avaliacao/historico_avaliacoes.size();
   return;
+}
+
+std::string Produto::descricao_produto(){
+  std::stringstream _descricao;
+  _descricao << _nome << " - R$" << _preco << " - " << _vendidos << " vendidos - " << _avaliacao << " estrelas.\n";
+  std::string descricao = _descricao.str();
+  return descricao; 
 }

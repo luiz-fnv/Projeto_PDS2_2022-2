@@ -10,13 +10,14 @@
 #include "gerente.h"
 
 #include "pedido.h"
+#include "cardapio.h"
 
 
 class Banco_de_dados{
   private:
     std::vector<Cadastro> BancoDeCadastros;
     std::vector<Pedido> BancoDePedidos;
-    std::vector<Produto> Cardapio;
+    Cardapio _cardapio;
   public:
     //operações com Banco de Cadastros
     bool check_nome_login(std::string nome);
@@ -30,10 +31,8 @@ class Banco_de_dados{
     void calcular_mais_pedido();
     void terminar_dia();
     void mostrar_avaliacoes();
-    //operações com Cardapio (todas não feitas)
-    void inserir_produto();
-    void remover_produto();
-    void mostrar_cardapio();
+
+    Cardapio get_cardapio();
     
 };
 

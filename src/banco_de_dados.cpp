@@ -42,3 +42,7 @@ Cadastro Banco_de_dados::efetuar_login(std::string nome){
   }
   return cadastro;
 }
+
+Cardapio Banco_de_dados::get_cardapio(){
+  return _cardapio;
+}

@@ -9,7 +9,6 @@
 class Cliente : public Cadastro{
   private:
     std::string _endereco;
-
   public:
     Cliente(std::string nome, std::string senha, std::string endereco);
     std::string get_endereco();
