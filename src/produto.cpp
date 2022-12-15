@@ -41,3 +41,9 @@ std::string Produto::descricao_produto(){
   std::string descricao = _descricao.str();
   return descricao; 
 }
+
+double Produto::get_lucro()
+{
+  double lucro = _preco*_vendidos;
+  return lucro;
+}
