@@ -5,3 +5,4 @@ Funcionario::Funcionario(std::string nome, std::string senha){
   _senha = senha;
   _cargo = c_Funcionario;
 }
+
