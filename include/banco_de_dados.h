@@ -17,11 +17,12 @@ class Banco_de_dados{
   private:
     std::vector<Pedido> BancoDePedidos;
   public:
-    Cardapio _cardapio;
+    //Vetor de Contas e suas operações
     std::vector<Conta> _BancoDeContas;
-
-    //operações com Banco de Contas
     void inserir_conta(std::string nome, std::string senha, int cargo);
+
+
+    Cardapio _cardapio;
     //operações com Banco de Pedidos (todas não feitas)
     void inserir_pedido(Pedido novo_pedido);
     void alterar_pedido(Pedido pedido_alterado);

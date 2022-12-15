@@ -1,11 +1,11 @@
-#include "banco_de_dados.h"
+#include "../include/banco_de_dados.h"
 
 void Banco_de_dados::inserir_conta(std::string nome, std::string senha, int cargo){
   std::string endereco_conta;
   switch(cargo){
     case c_Cliente:
       std::cout << "Digite o endereço onde quer receber suas entregas:\n";
-      std::cin >> endereco_conta; // endereço da nova conta;
+      std::getline(std::cin,endereco_conta); // endereço da nova conta;
       _BancoDeContas.push_back(Cliente(nome,senha,endereco_conta));
       break;
     case c_Funcionario:

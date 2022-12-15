@@ -1,4 +1,4 @@
-#include "login_e_cadastro.h"
+#include "../include/login_e_cadastro.h"
 
 bool check_nome_login(std::string nome, Banco_de_dados data){
   for(unsigned int i=0; i != data._BancoDeContas.size(); ++i){
@@ -36,18 +36,18 @@ int login(Banco_de_dados data){
     aux = 1;
 
     std::cout<< "Digite o seu nome de usuário:\n";
-    std::cin >> nome_login;
+    std::getline(std::cin,nome_login);
 
     if(check_nome_login(nome_login, data) == 0){
       aux = 0;
       std::cout << "Digite sua senha:\n";
-      std::cin >> senha_login;
+      std::getline(std::cin,senha_login);
     }
 
     if(aux != 0){
       login = efetuar_login(nome_login, data);
       std::cout << "Digite sua senha:\n";
-      std::cin >> senha_login;
+      std::getline(std::cin,senha_login);
       if(check_senha_login(login, senha_login) == 0){
         aux = 0;
       }
@@ -81,9 +81,9 @@ Banco_de_dados cadastrar(Banco_de_dados data){
   std::string senha_conta; //senha da conta nova
 
   std::cout << "Digite o nome de usuário para sua nova conta:\n";
-  std::cin >> nome_conta;
+  std::getline(std::cin,nome_conta);
   std::cout << "Digite uma senha para sua conta:\n";
-  std::cin >> senha_conta;
+  std::getline(std::cin,senha_conta);
   data.inserir_conta(nome_conta, senha_conta, c_Cliente);
 
   std::cout << "Sua conta foi criada com sucesso.\n";

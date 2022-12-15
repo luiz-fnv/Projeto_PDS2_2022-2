@@ -14,9 +14,9 @@ int main(){
     std::cout << "3 - Sair\n";
 
     int nivel_de_acesso;
-    int command;
-    std::cin >> command;
-    switch(command){
+    std::string command;
+    std::getline(std::cin,command);
+    switch(std::stoi(command)){
       case 1:
         nivel_de_acesso = login(data);
         break;
@@ -26,6 +26,8 @@ int main(){
         break;
       case 3:
         return 1;
+      default:
+        break;
     }
     
     while(nivel_de_acesso != c_Nenhum){
@@ -37,8 +39,8 @@ int main(){
           std::cout << "3 - Avaliar um pedido\n";
           std::cout << "4 - Sair\n";
 
-          std::cin >> command;
-          switch(command){
+          std::getline(std::cin,command);
+          switch(std::stoi(command)){
             case 1:{
               data._cardapio.mostrar_cardapio_alfabetico();
               break;
@@ -75,6 +77,8 @@ int main(){
               nivel_de_acesso = c_Nenhum;
               break;
             }
+            default:
+              break;
           }
           break;
 
@@ -85,8 +89,8 @@ int main(){
           std::cout << "3 - Cancelar um pedido\n";
           std::cout << "4 - Sair\n";
 
-          std::cin >> command;
-          switch(command){
+          std::getline(std::cin,command);
+          switch(std::stoi(command)){
             case 1:{
                 data.mostrar_pedidos();
               break;
@@ -103,6 +107,8 @@ int main(){
               nivel_de_acesso = c_Nenhum;
               break;
             }
+            default:
+              break;
           }
           break;
 
@@ -113,8 +119,8 @@ int main(){
           std::cout << "3 - Alterar cardápio \n";
           std::cout << "4 - Sair\n";
 
-          std::cin >> command;
-          switch(command){
+          std::getline(std::cin,command);
+          switch(std::stoi(command)){
             case 1:{
               // login.mostrar_cardapio_mais_vendidos(data.get_cardapio());
               break;
@@ -128,8 +134,8 @@ int main(){
               std::cout << "2 - Remover Produto\n";
               std::cout << "3 - Voltar\n";
 
-              std::cin >> command;
-              switch(command){
+              std::getline(std::cin,command);
+              switch(std::stoi(command)){
                 case 1:{
                   data._cardapio.inserir_produto();
                   break;
@@ -148,6 +154,8 @@ int main(){
               nivel_de_acesso = c_Nenhum;
               break;
             }
+            default:
+              break;
             break;
           }
       }
