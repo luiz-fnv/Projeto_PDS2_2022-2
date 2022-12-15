@@ -5,7 +5,7 @@
 void Cardapio::inserir_produto(){
   std::cout << "Digite o nome do produto a ser adicionado:\n";
   std::string nome_produto_adicionado;
-  std::cin >> nome_produto_adicionado;
+  std::getline(std::cin,nome_produto_adicionado);
   std::cout << "Digite o preco do produto a ser adicionado:\n";
   double preco_produto_adicionado;
   std::cin >> preco_produto_adicionado;
@@ -20,7 +20,7 @@ void Cardapio::remover_produto(){
   }
   std::cout << "Digite o nome do produto a ser removido:\n";
   std::string nome_do_produto;
-  std::cin >> nome_do_produto;
+  std::getline(std::cin,nome_do_produto);
   for(unsigned int i=0; i < _cardapio.size(); ++i){
     if(_cardapio.at(i).get_nome() == nome_do_produto){
       _cardapio.erase(_cardapio.begin()+i);
@@ -37,7 +37,6 @@ bool sort_nomes(std::string a, std::string b){
 }
 
 void Cardapio::mostrar_cardapio_alfabetico(){
-  //TESTE
   Cardapio temporario;
   temporario._cardapio = _cardapio;
   std::vector<std::string> nomes;
@@ -53,4 +52,16 @@ void Cardapio::mostrar_cardapio_alfabetico(){
       }
     }
   }
+}
+
+long unsigned int Cardapio::num_produtos(){
+  return _cardapio.size();
+}
+
+std::vector<std::string> Cardapio::get_nomes_produtos(){
+  std::vector<std::string> nomes;
+  for(auto i = _cardapio.begin(); i != _cardapio.end(); i++){
+    nomes.push_back((*i).get_nome());
+  }
+  return nomes;
 }

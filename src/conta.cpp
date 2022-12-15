@@ -1,5 +1,8 @@
 #include "conta.h"
 
+Conta::Conta(){
+}
+
 std::string Conta::get_nome() const{
   return _nome;
 }

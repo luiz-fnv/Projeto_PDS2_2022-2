@@ -19,6 +19,8 @@ class Conta{
     Cargo _cargo;
 
   public:
+    Conta();
+
     std::string get_nome() const;
     std::string get_senha() const;
     std::string get_cargo_txt() const;
