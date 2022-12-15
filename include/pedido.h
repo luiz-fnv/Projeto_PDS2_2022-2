@@ -3,6 +3,7 @@
 
 #include "produto.h"
 #include <iostream>
+#include "banco_de_dados.h"
 
 class Pedido{
   private:
@@ -11,6 +12,7 @@ class Pedido{
   public:
     Pedido();
     std::string get_estado();
+    void criar_pedido(Banco_de_dados banco);
     void add_produto_lista(std::string adicionar);
     void atualiza_estado(std::string atualizacao);
     void cancela_estado();

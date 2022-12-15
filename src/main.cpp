@@ -56,25 +56,8 @@ int main(){
               break;
             }
             case 2:{
-              std::cout << "Digite os produtos que deseja pedir separados por um espaço. Digite * quando quiser encerrar" << std::endl;
-              std::string prods;
-              std::vector<std::string> lista;
               Pedido novo;
-
-              while(prods != "*"){
-                std::cin >> prods;
-                lista.push_back(prods);
-              }
-              if(prods == "*"){
-                for(long unsigned int i = 0; i < lista.size(); i++){
-                  for(long unsigned int j = 0; j < data._cardapio.num_produtos(); j++){
-                    if(lista[i] == data._cardapio.get_nomes_produtos()[j]){
-                      novo.add_produto_lista(lista[i]);
-                    }
-                  }
-                }
-              }
-
+              novo.criar_pedido(data);
               data.inserir_pedido(novo);
               break;
             }

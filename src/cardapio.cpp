@@ -5,7 +5,7 @@
 void Cardapio::inserir_produto(){
   std::cout << "Digite o nome do produto a ser adicionado:\n";
   std::string nome_produto_adicionado;
-  std::cin >> nome_produto_adicionado;
+  std::getline(std::cin,nome_produto_adicionado);
   std::cout << "Digite o preco do produto a ser adicionado:\n";
   double preco_produto_adicionado;
   std::cin >> preco_produto_adicionado;
@@ -20,7 +20,7 @@ void Cardapio::remover_produto(){
   }
   std::cout << "Digite o nome do produto a ser removido:\n";
   std::string nome_do_produto;
-  std::cin >> nome_do_produto;
+  std::getline(std::cin,nome_do_produto);
   for(unsigned int i=0; i < _cardapio.size(); ++i){
     if(_cardapio.at(i).get_nome() == nome_do_produto){
       _cardapio.erase(_cardapio.begin()+i);
