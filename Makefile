@@ -2,12 +2,15 @@ CC := g++
 SRCDIR := src
 TSTDIR := tests
 BUILDDIR := build
+
 TARGET := main.exe
 TESTER := src/tester.cpp
+
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 TSTSOURCES := $(shell find $(TSTDIR) -type f -name *.$(SRCEXT))
+
 CFLAGS := -g -Wall -O3 -std=c++14
 INC := -I include/ -I third_party/
 
