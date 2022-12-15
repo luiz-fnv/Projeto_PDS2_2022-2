@@ -11,6 +11,7 @@ class Pedido{
   public:
     Pedido();
     std::string get_estado();
+    void add_produto_lista(std::string adicionar);
     void atualiza_estado(std::string atualizacao);
     void cancela_estado();
     void mostrar_produtos_pedido();

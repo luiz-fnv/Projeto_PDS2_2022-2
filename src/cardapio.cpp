@@ -37,7 +37,6 @@ bool sort_nomes(std::string a, std::string b){
 }
 
 void Cardapio::mostrar_cardapio_alfabetico(){
-  //TESTE
   Cardapio temporario;
   temporario._cardapio = _cardapio;
   std::vector<std::string> nomes;
@@ -53,4 +52,16 @@ void Cardapio::mostrar_cardapio_alfabetico(){
       }
     }
   }
+}
+
+long unsigned int Cardapio::num_produtos(){
+  return _cardapio.size();
+}
+
+std::vector<std::string> Cardapio::get_nomes_produtos(){
+  std::vector<std::string> nomes;
+  for(auto i = _cardapio.begin(); i != _cardapio.end(); i++){
+    nomes.push_back((*i).get_nome());
+  }
+  return nomes;
 }

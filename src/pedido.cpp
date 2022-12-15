@@ -8,6 +8,10 @@ std::string Pedido::get_estado(){
     return _estado;
 }
 
+void Pedido::add_produto_lista(std::string adicionar){
+    _VetorDeProdutos.push_back(adicionar);
+}
+
 void Pedido::atualiza_estado(std::string atualizacao){
     _estado = atualizacao;
     return;

@@ -67,7 +67,6 @@ void Banco_de_dados::mostrar_pedidos(){
     std::cout << "Pedido " << aux+1 << ":" << std::endl;
     BancoDePedidos.at(aux).mostrar_produtos_pedido();
   }
-  return;
 }
 
 Cardapio Banco_de_dados::get_cardapio(){
