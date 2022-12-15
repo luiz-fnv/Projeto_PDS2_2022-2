@@ -21,7 +21,6 @@ class Banco_de_dados{
     std::vector<Conta> _BancoDeContas;
     void inserir_conta(std::string nome, std::string senha, int cargo);
 
-
     Cardapio _cardapio;
     //operações com Banco de Pedidos (todas não feitas)
     void inserir_pedido(Pedido novo_pedido);

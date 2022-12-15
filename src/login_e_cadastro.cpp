@@ -27,13 +27,16 @@ Conta efetuar_login(std::string nome, Banco_de_dados data){
 }
 
 
-int login(Banco_de_dados data){
+std::pair<int,Conta> login(Banco_de_dados data){
   std::string nome_login;
   std::string senha_login;
   int aux;
   Conta login;
+  std::pair<int,Conta> Dados_login;
+
   while(1){
     aux = 1;
+    std::cin.clear();
 
     std::cout<< "Digite o seu nome de usuário:\n";
     std::getline(std::cin,nome_login);
@@ -41,12 +44,14 @@ int login(Banco_de_dados data){
     if(check_nome_login(nome_login, data) == 0){
       aux = 0;
       std::cout << "Digite sua senha:\n";
+      std::cin.clear();
       std::getline(std::cin,senha_login);
     }
 
     if(aux != 0){
       login = efetuar_login(nome_login, data);
       std::cout << "Digite sua senha:\n";
+      std::cin.clear();
       std::getline(std::cin,senha_login);
       if(check_senha_login(login, senha_login) == 0){
         aux = 0;
@@ -55,7 +60,8 @@ int login(Banco_de_dados data){
 
     if(aux == 1){
       std::cout << "Seja bem vindo " << login.get_cargo_txt() << " " << login.get_nome() << ".\n";
-      return login.get_cargo();
+      Dados_login = std::make_pair(login.get_cargo(),login);
+      return Dados_login;
     }
     
     std::cout << "Nome e/ou senha incorreto(s).\n";
@@ -63,15 +69,18 @@ int login(Banco_de_dados data){
     std::cout << "2 - Voltar. \n";
 
     std::string command;
-    std::cin >> command;
+    std::cin.clear();
+    std::getline(std::cin,command);
     switch(std::stoi(command)){
       case 1:{
         break;
       }
       case 2:{
-        return c_Nenhum;
+        Dados_login = std::make_pair(c_Nenhum, Conta());
+        return Dados_login;
       }
     }
+
   }
 }
 
@@ -81,8 +90,10 @@ Banco_de_dados cadastrar(Banco_de_dados data){
   std::string senha_conta; //senha da conta nova
 
   std::cout << "Digite o nome de usuário para sua nova conta:\n";
+  std::cin.clear();
   std::getline(std::cin,nome_conta);
   std::cout << "Digite uma senha para sua conta:\n";
+  std::cin.clear();
   std::getline(std::cin,senha_conta);
   data.inserir_conta(nome_conta, senha_conta, c_Cliente);
 

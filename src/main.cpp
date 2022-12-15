@@ -4,6 +4,9 @@
 
 int main(){
   Banco_de_dados data;
+  std::pair<int,Conta> Dados_login;
+  Conta logada;
+
   data.inserir_conta("Gerente_a","12984",c_Gerente);
   data.inserir_conta("Funcionario_a","42710",c_Funcionario);
 
@@ -15,10 +18,14 @@ int main(){
 
     int nivel_de_acesso;
     std::string command;
+    std::cin.clear();
     std::getline(std::cin,command);
+
     switch(std::stoi(command)){
       case 1:
-        nivel_de_acesso = login(data);
+        Dados_login = login(data);
+        nivel_de_acesso = Dados_login.first;
+        logada = Dados_login.second;
         break;
       case 2:
         nivel_de_acesso = c_Nenhum;
@@ -39,6 +46,7 @@ int main(){
           std::cout << "3 - Avaliar um pedido\n";
           std::cout << "4 - Sair\n";
 
+          std::cin.clear();
           std::getline(std::cin,command);
           switch(std::stoi(command)){
             case 1:{
@@ -52,6 +60,7 @@ int main(){
               Pedido novo;
 
               while(prods != "*"){
+                std::cin.clear();
                 std::cin >> prods;
                 lista.push_back(prods);
               }
@@ -89,6 +98,7 @@ int main(){
           std::cout << "3 - Cancelar um pedido\n";
           std::cout << "4 - Sair\n";
 
+          std::cin.clear();
           std::getline(std::cin,command);
           switch(std::stoi(command)){
             case 1:{
@@ -119,6 +129,7 @@ int main(){
           std::cout << "3 - Alterar cardápio \n";
           std::cout << "4 - Sair\n";
 
+          std::cin.clear();
           std::getline(std::cin,command);
           switch(std::stoi(command)){
             case 1:{
@@ -134,6 +145,7 @@ int main(){
               std::cout << "2 - Remover Produto\n";
               std::cout << "3 - Voltar\n";
 
+              std::cin.clear();
               std::getline(std::cin,command);
               switch(std::stoi(command)){
                 case 1:{
