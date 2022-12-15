@@ -3,7 +3,7 @@ SRCDIR := src
 TSTDIR := tests
 BUILDDIR := build
 TARGET := main.exe
-
+TESTER := src/tester.cpp
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
