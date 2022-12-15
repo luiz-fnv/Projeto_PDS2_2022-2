@@ -36,7 +36,6 @@ std::pair<int,Conta> login(Banco_de_dados data){
 
   while(1){
     aux = 1;
-    std::cin.clear();
 
     std::cout<< "Digite o seu nome de usuário:\n";
     std::getline(std::cin,nome_login);
@@ -44,14 +43,12 @@ std::pair<int,Conta> login(Banco_de_dados data){
     if(check_nome_login(nome_login, data) == 0){
       aux = 0;
       std::cout << "Digite sua senha:\n";
-      std::cin.clear();
       std::getline(std::cin,senha_login);
     }
 
     if(aux != 0){
       login = efetuar_login(nome_login, data);
       std::cout << "Digite sua senha:\n";
-      std::cin.clear();
       std::getline(std::cin,senha_login);
       if(check_senha_login(login, senha_login) == 0){
         aux = 0;
@@ -69,7 +66,6 @@ std::pair<int,Conta> login(Banco_de_dados data){
     std::cout << "2 - Voltar. \n";
 
     std::string command;
-    std::cin.clear();
     std::getline(std::cin,command);
     switch(std::stoi(command)){
       case 1:{
@@ -90,10 +86,8 @@ Banco_de_dados cadastrar(Banco_de_dados data){
   std::string senha_conta; //senha da conta nova
 
   std::cout << "Digite o nome de usuário para sua nova conta:\n";
-  std::cin.clear();
   std::getline(std::cin,nome_conta);
   std::cout << "Digite uma senha para sua conta:\n";
-  std::cin.clear();
   std::getline(std::cin,senha_conta);
   data.inserir_conta(nome_conta, senha_conta, c_Cliente);
 

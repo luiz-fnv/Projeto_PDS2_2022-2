@@ -17,11 +17,13 @@ int main(){
     std::cout << "3 - Sair\n";
 
     int nivel_de_acesso;
-    std::string command;
-    std::cin.clear();
-    std::getline(std::cin,command);
+    int command;
+    Conta logada;
 
-    switch(std::stoi(command)){
+    std::cin >> command;
+    std::cin.get();
+
+    switch(command){
       case 1:
         Dados_login = login(data);
         nivel_de_acesso = Dados_login.first;
@@ -46,9 +48,9 @@ int main(){
           std::cout << "3 - Avaliar um pedido\n";
           std::cout << "4 - Sair\n";
 
-          std::cin.clear();
-          std::getline(std::cin,command);
-          switch(std::stoi(command)){
+          std::cin >> command;
+          std::cin.get();
+          switch(command){
             case 1:{
               data._cardapio.mostrar_cardapio_alfabetico();
               break;
@@ -60,7 +62,6 @@ int main(){
               Pedido novo;
 
               while(prods != "*"){
-                std::cin.clear();
                 std::cin >> prods;
                 lista.push_back(prods);
               }
@@ -98,9 +99,9 @@ int main(){
           std::cout << "3 - Cancelar um pedido\n";
           std::cout << "4 - Sair\n";
 
-          std::cin.clear();
-          std::getline(std::cin,command);
-          switch(std::stoi(command)){
+          std::cin >> command;
+          std::cin.get();
+          switch(command){
             case 1:{
                 data.mostrar_pedidos();
               break;
@@ -129,9 +130,9 @@ int main(){
           std::cout << "3 - Alterar cardápio \n";
           std::cout << "4 - Sair\n";
 
-          std::cin.clear();
-          std::getline(std::cin,command);
-          switch(std::stoi(command)){
+          std::cin >> command;
+          std::cin.get();
+          switch(command){
             case 1:{
               // login.mostrar_cardapio_mais_vendidos(data.get_cardapio());
               break;
@@ -145,9 +146,9 @@ int main(){
               std::cout << "2 - Remover Produto\n";
               std::cout << "3 - Voltar\n";
 
-              std::cin.clear();
-              std::getline(std::cin,command);
-              switch(std::stoi(command)){
+              std::cin >> command;
+              std::cin.get();
+              switch(command){
                 case 1:{
                   data._cardapio.inserir_produto();
                   break;
