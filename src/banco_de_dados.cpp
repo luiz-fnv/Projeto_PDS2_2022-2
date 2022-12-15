@@ -62,10 +62,29 @@ void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
   return;
 }
 
+void Banco_de_dados::criar_pedido(){
+    Pedido pedido = Pedido();
+    std::cout << "Digite os produtos que deseja pedir, um em cada linha. Digite * quando quiser encerrar" << std::endl;
+    std::string prods;
+
+    while(prods != "*"){
+        std::getline(std::cin, prods);
+        for(long unsigned int i = 0; i < _cardapio.num_produtos(); i++){
+            if(prods == _cardapio.get_nomes_produtos()[i]){
+                pedido.add_produto_lista(prods);
+            }
+        }
+        if(prods == "*"){
+            break;
+        }
+    }
+    inserir_pedido(pedido);
+}
+
 void Banco_de_dados::mostrar_pedidos(){
   for(unsigned int aux = 0; aux < BancoDePedidos.size(); aux++){
-    std::cout << "Pedido" << " " << aux+1 << ":" << std::endl;
-    BancoDePedidos.at(aux).mostra_produtos_pedido();
+      std::cout << "Pedido " << aux+1 << ":" << std::endl;
+    BancoDePedidos.at(aux).mostrar_produtos_pedido();
   }
 }
 

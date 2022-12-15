@@ -4,9 +4,11 @@
 
 int main(){
   Banco_de_dados data;
+  std::pair<int,Conta> Dados_login;
+  Conta logada;
+
   data.inserir_conta("Gerente_a","12984",c_Gerente);
   data.inserir_conta("Funcionario_a","42710",c_Funcionario);
-  data.inserir_conta("Cliente_a", "15597", c_Cliente);
 
   while(1){
     std::cout << "Bem vindo ao sistema eletrônico do restaurante XXX, digite o número correspondente à operação que quiser realizar.\n";
@@ -16,10 +18,16 @@ int main(){
 
     int nivel_de_acesso;
     int command;
+    Conta logada;
+
     std::cin >> command;
+    std::cin.get();
+
     switch(command){
       case 1:
-        nivel_de_acesso = login(data);
+        Dados_login = login(data);
+        nivel_de_acesso = Dados_login.first;
+        logada = Dados_login.second;
         break;
       case 2:
         nivel_de_acesso = c_Nenhum;
@@ -27,6 +35,8 @@ int main(){
         break;
       case 3:
         return 1;
+      default:
+        break;
     }
     
     while(nivel_de_acesso != c_Nenhum){
@@ -39,24 +49,28 @@ int main(){
           std::cout << "4 - Sair\n";
 
           std::cin >> command;
+          std::cin.get();
           switch(command){
             case 1:{
               data._cardapio.mostrar_cardapio_alfabetico();
               break;
             }
-            //implementar o resto
             case 2:{
-  
+              Pedido novo;
+              data.criar_pedido();
               break;
             }
             case 3:{
-
+              std::cout << "Esperamos que tenha tido uma boa experiência! Avalie seu pedido com uma nota de 1 a 5" << std::endl;
+              // COMO AVALIAR OS PRODUTOS SEPARADAMENTE??
               break;
             }
             case 4:{
               nivel_de_acesso = c_Nenhum;
               break;
             }
+            default:
+              break;
           }
           break;
 
@@ -68,6 +82,7 @@ int main(){
           std::cout << "4 - Sair\n";
 
           std::cin >> command;
+          std::cin.get();
           switch(command){
             case 1:{
                 data.mostrar_pedidos();
@@ -85,6 +100,8 @@ int main(){
               nivel_de_acesso = c_Nenhum;
               break;
             }
+            default:
+              break;
           }
           break;
 
@@ -96,6 +113,7 @@ int main(){
           std::cout << "4 - Sair\n";
 
           std::cin >> command;
+          std::cin.get();
           switch(command){
             case 1:{
               // login.mostrar_cardapio_mais_vendidos(data.get_cardapio());
@@ -111,6 +129,7 @@ int main(){
               std::cout << "3 - Voltar\n";
 
               std::cin >> command;
+              std::cin.get();
               switch(command){
                 case 1:{
                   data._cardapio.inserir_produto();
@@ -130,6 +149,8 @@ int main(){
               nivel_de_acesso = c_Nenhum;
               break;
             }
+            default:
+              break;
             break;
           }
       }
