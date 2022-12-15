@@ -1,5 +1,6 @@
 CC := g++
 SRCDIR := src
+TSTDIR := testes
 BUILDDIR := build
 TARGET := main.exe
 
