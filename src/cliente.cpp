@@ -16,7 +16,7 @@ void Cliente::avaliar_pedido(Produto produto){
   std::cout << "Avalie seu pedido com uma nota de 1 a 5:"<< std::endl;
   std::cin >> avaliacao;
   if (avaliacao > 5 || avaliacao < 1) {
-    throw std::invalid_argument("A avaliação deve estar entre 0 e 5");
+    throw std::invalid_argument("A avaliação deve estar entre 1 e 5");
   }
 
   produto.add_avaliacao(avaliacao);
