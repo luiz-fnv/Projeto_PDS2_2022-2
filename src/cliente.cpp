@@ -19,7 +19,7 @@ void Cliente::avaliar_pedido(Produto produto){
     throw std::invalid_argument("A avaliação deve estar entre 0 e 5");
   }
 
-  produto.mudar_avaliacao(avaliacao);
+  produto.add_avaliacao(avaliacao);
   return;
 }
 

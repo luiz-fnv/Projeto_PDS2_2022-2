@@ -21,18 +21,17 @@ std::string Produto::get_nome(){
 }
 
 double Produto::get_avaliacao(){
-  double estrelas;
-  estrelas = std::ceil(_avaliacao * 100.0)/100.0;
+  double estrelas = 0;
+  for(unsigned int i = 0; i < historico_avaliacoes.size(); i++){
+    estrelas+=historico_avaliacoes[i];
+  }
+  estrelas = estrelas/historico_avaliacoes.size();
+  _avaliacao = estrelas;
   return estrelas;
 }
 
-void Produto::mudar_avaliacao(int nova_avaliacao){
+void Produto::add_avaliacao(int nova_avaliacao){
   historico_avaliacoes.push_back(nova_avaliacao);
-  for(unsigned int aux = 0; aux < historico_avaliacoes.size(); aux++){
-    _avaliacao += historico_avaliacoes.at(aux);
-  }
-  _avaliacao = _avaliacao/historico_avaliacoes.size();
-  return;
 }
 
 std::string Produto::descricao_produto(){

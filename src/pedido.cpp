@@ -1,35 +1,37 @@
 #include "pedido.h"
 
-Pedido::Pedido(){
-    _estado = "A preparar";
+void Pedido::add_prod(Produto prod){
+    
+}
+
+void Pedido::print_descricao_pedido(){
+    for(Produto i : _lista_produtos){
+        std::cout << i.descricao_produto();
+    }
+}
+
+std::string Pedido::get_endereco(){
+    return _endereco_pedido;
 }
 
 std::string Pedido::get_estado(){
-    return _estado;
+    std::string desc_estado;
+    if(_estado == 0){
+        desc_estado = "O pedido está sendo preparado.";
+    }else if(_estado == 1){
+        desc_estado = "O pedido já foi enviado.";
+    }else if(_estado == 2){
+        desc_estado = "O pedido foi concluído";
+    }else if(_estado == 3){
+        desc_estado = "O pedido foi cancelado pelo cliente";
+    }
+    return desc_estado;
 }
 
-void Pedido::add_produto_lista(std::string adicionar){
-    _VetorDeProdutos.push_back(adicionar);
+double Pedido::get_preco(){
+    return _preco_total;
 }
 
-void Pedido::atualiza_estado(std::string atualizacao){
-    _estado = atualizacao;
-    return;
-}
-
-void Pedido::cancela_estado(){
-    _estado = "Pedido cancelado";
-    return;
-}
-
-void Pedido::mostrar_produtos_pedido(){
-    for(unsigned int aux = 0; aux < _VetorDeProdutos.size(); aux++)
-        std::cout << _VetorDeProdutos.at(aux) << std::endl;
-    return;
-}
-
-std::vector<std::string> Pedido::get_pedido(){
-    std::vector<std::string> produtos;
-    produtos = _VetorDeProdutos;
-    return produtos;
+void Pedido::mudar_estado(Estado novo){
+    _estado = novo;
 }

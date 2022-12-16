@@ -32,6 +32,10 @@ void Cardapio::remover_produto(){
   return;
 }
 
+std::vector<Produto> Cardapio::get_cardapio(){
+  return _cardapio;
+}
+
 bool sort_nomes(std::string a, std::string b){
   return a<b;
 }
@@ -43,7 +47,7 @@ void Cardapio::mostrar_cardapio_alfabetico(){
   for(unsigned long int i = 0; i < _cardapio.size(); i++){
     nomes.push_back(temporario._cardapio[i].get_nome());
   }
-  std::sort(nomes.begin(),nomes.end(),sort_nomes);
+  std::sort(nomes.begin(), nomes.end(), sort_nomes);
   for(unsigned long int i = 0; i < nomes.size(); i++){
     //std::cout << nomes[i] << std::endl;
     for(auto j = _cardapio.begin(); j != _cardapio.end(); j++){

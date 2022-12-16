@@ -20,7 +20,7 @@ class Produto{
     double get_preco();
     double get_lucro();
     double get_avaliacao();
-    void mudar_avaliacao(int nova_avaliacao);
+    void add_avaliacao(int nova_avaliacao);
     std::string descricao_produto();
 };
 

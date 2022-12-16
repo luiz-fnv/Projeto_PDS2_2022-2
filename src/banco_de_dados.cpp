@@ -22,7 +22,7 @@ void Banco_de_dados::inserir_pedido(Pedido novo_pedido){
   return;
 }
 
-void Banco_de_dados::alterar_pedido(Pedido pedido_alterado){
+/* void Banco_de_dados::alterar_pedido(Pedido pedido_alterado){
   auto it = BancoDePedidos.begin();
   bool encontrado = false;
   for(; it != BancoDePedidos.end(); it++)
@@ -39,14 +39,13 @@ void Banco_de_dados::alterar_pedido(Pedido pedido_alterado){
   std::cin >> atualizacao;
   it->atualiza_estado(atualizacao);
   return;
-}
+} */
 
 void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
-  std::string concluido = "Pedido concluído";
-  pedido_concluido.atualiza_estado(concluido);
+  pedido_concluido.mudar_estado(concluido);
 }
 
-void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
+/* void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
   auto it = BancoDePedidos.begin();
   bool encontrado = false;
   for(; it != BancoDePedidos.end(); it++)
@@ -60,18 +59,18 @@ void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
     }
   it->cancela_estado();
   return;
-}
+} */
 
 void Banco_de_dados::criar_pedido(){
-    Pedido pedido = Pedido();
+    Pedido pedido;
     std::cout << "Digite os produtos que deseja pedir, um em cada linha. Digite * quando quiser encerrar" << std::endl;
     std::string prods;
 
     while(prods != "*"){
         std::getline(std::cin, prods);
-        for(long unsigned int i = 0; i < _cardapio.num_produtos(); i++){
-            if(prods == _cardapio.get_nomes_produtos()[i]){
-                pedido.add_produto_lista(prods);
+        for(Produto i : _cardapio.get_cardapio()){
+            if(prods == i.get_nome()){
+                pedido.add_prod(i);
             }
         }
         if(prods == "*"){
@@ -84,7 +83,7 @@ void Banco_de_dados::criar_pedido(){
 void Banco_de_dados::mostrar_pedidos(){
   for(unsigned int aux = 0; aux < BancoDePedidos.size(); aux++){
       std::cout << "Pedido " << aux+1 << ":" << std::endl;
-    BancoDePedidos.at(aux).mostrar_produtos_pedido();
+    BancoDePedidos.at(aux).print_descricao_pedido();
   }
 }
 

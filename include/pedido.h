@@ -4,18 +4,26 @@
 #include "produto.h"
 #include <iostream>
 
+enum Estado{
+  preparacao,
+  enviado,
+  concluido,
+  cancelado
+};
+
 class Pedido{
   private:
-    std::vector<std::string> _VetorDeProdutos;
-    std::string _estado;
+    std::vector<Produto> _lista_produtos;
+    Estado _estado;
+    std::string _endereco_pedido;
+    double _preco_total;
   public:
-    Pedido();
+    void add_prod(Produto prod);
+    void print_descricao_pedido();
+    double get_preco();
+    std::string get_endereco();
     std::string get_estado();
-    void add_produto_lista(std::string adicionar);
-    void atualiza_estado(std::string atualizacao);
-    void cancela_estado();
-    void mostrar_produtos_pedido();
-    std::vector<std::string> get_pedido();
+    void mudar_estado(Estado novo);
 };
 
 #endif
