@@ -5,9 +5,6 @@
 #include <iostream>
 
 #include "conta.h"
-#include "cliente.h"
-#include "funcionario.h"
-#include "gerente.h"
 #include "pedido.h"
 #include "cardapio.h"
 
@@ -18,7 +15,7 @@ class Banco_de_dados{
   public:
     //Vetor de Contas e suas operações
     std::vector<Conta> _BancoDeContas;
-    void inserir_conta(std::string nome, std::string senha, int cargo);
+    void inserir_conta(std::string nome, std::string senha, Cargo cargo);
 
     Cardapio _cardapio;
     //operações com Banco de Pedidos (todas não feitas)

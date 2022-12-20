@@ -17,27 +17,27 @@ bool check_senha_login(Conta login, std::string senha){
 }
 
 Conta efetuar_login(std::string nome, Banco_de_dados data){
-  Conta conta;
   for(unsigned int i=0; i != data._BancoDeContas.size(); ++i){
     if (data._BancoDeContas.at(i).get_nome() == nome){
-      conta = data._BancoDeContas.at(i);
+      Conta conta = data._BancoDeContas.at(i);
+      return conta;
     }
   }
-  return conta;
+  return Conta("Erro","Erro",c_Nenhum);
 }
 
 
-std::pair<int,Conta> login(Banco_de_dados data){
+int login(Banco_de_dados data){
   std::string nome_login;
   std::string senha_login;
   int aux;
-  Conta login;
-  std::pair<int,Conta> Dados_login;
+  Conta login = Conta("", "", c_Nenhum);
 
   while(1){
     aux = 1;
 
-    std::cout<< "Digite o seu nome de usuário:\n";
+    std::cout << "--------------------------------------------------\n";
+    std::cout << "Para efetuar o login, digite o seu nome de usuário:\n";
     std::getline(std::cin,nome_login);
 
     if(check_nome_login(nome_login, data) == 0){
@@ -56,12 +56,14 @@ std::pair<int,Conta> login(Banco_de_dados data){
     }
 
     if(aux == 1){
+      std::cout << "--------------------------------------------------\n";
       std::cout << "Seja bem vindo " << login.get_cargo_txt() << " " << login.get_nome() << ".\n";
-      Dados_login = std::make_pair(login.get_cargo(),login);
-      return Dados_login;
+      return login.get_cargo();
     }
     
+    std::cout << "--------------------------------------------------\n";
     std::cout << "Nome e/ou senha incorreto(s).\n";
+    std::cout << "--------------------------------------------------\n";
     std::cout << "1 - Tentar novamente.\n";
     std::cout << "2 - Voltar. \n";
 
@@ -72,8 +74,7 @@ std::pair<int,Conta> login(Banco_de_dados data){
         break;
       }
       case 2:{
-        Dados_login = std::make_pair(c_Nenhum, Conta());
-        return Dados_login;
+        return c_Nenhum;
       }
     }
 
@@ -85,11 +86,13 @@ Banco_de_dados cadastrar(Banco_de_dados data){
   std::string nome_conta; //nome da conta nova
   std::string senha_conta; //senha da conta nova
 
+  std::cout << "--------------------------------------------------\n";
   std::cout << "Digite o nome de usuário para sua nova conta:\n";
   std::getline(std::cin,nome_conta);
   std::cout << "Digite uma senha para sua conta:\n";
   std::getline(std::cin,senha_conta);
   data.inserir_conta(nome_conta, senha_conta, c_Cliente);
+  std::cout << "--------------------------------------------------\n";
 
   std::cout << "Sua conta foi criada com sucesso.\n";
   return data;

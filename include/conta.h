@@ -19,16 +19,12 @@ class Conta{
     Cargo _cargo;
 
   public:
-    Conta();
+    Conta(std::string nome, std::string senha, Cargo cargo);
 
     std::string get_nome() const;
     std::string get_senha() const;
     std::string get_cargo_txt() const;
     int get_cargo() const;
-
-    //gerente
-    // void mostrar_cardapio_mais_vendidos(Cardapio cardapio) const;
-
 };
 
 #endif

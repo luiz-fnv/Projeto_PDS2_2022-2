@@ -1,6 +1,9 @@
-#include "conta.h"
+#include "../include/conta.h"
 
-Conta::Conta(){
+Conta::Conta(std::string nome, std::string senha, Cargo cargo){
+  _nome = nome;
+  _senha = senha;
+  _cargo = cargo;
 }
 
 std::string Conta::get_nome() const{

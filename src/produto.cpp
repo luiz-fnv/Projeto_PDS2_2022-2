@@ -1,4 +1,4 @@
-#include "produto.h"
+#include "../include/produto.h"
 #include <cmath>
 
 Produto::Produto(std::string nome, double preco)

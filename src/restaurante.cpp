@@ -1,5 +1,5 @@
-#include "restaurante.h"
-#include "banco_de_dados.h"
+#include "../include/restaurante.h"
+#include "../include/banco_de_dados.h"
 
 Restaurante::Restaurante(double lucro, double avaliacao)
 {

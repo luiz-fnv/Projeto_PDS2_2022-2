@@ -1,4 +1,4 @@
-#include "pedido.h"
+#include "../include/pedido.h"
 
 void Pedido::add_prod(Produto prod){
     
