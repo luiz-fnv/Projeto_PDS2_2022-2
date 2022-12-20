@@ -36,15 +36,12 @@ double Produto::get_avaliacao()
     estrelas = estrelas / historico_avaliacoes.size();
     _avaliacao = estrelas;
   }
-
   return estrelas;
 }
 
 void Produto::add_avaliacao(int nova_avaliacao)
 {
-
     historico_avaliacoes.push_back(nova_avaliacao);
-
 }
 
 std::string Produto::descricao_produto()

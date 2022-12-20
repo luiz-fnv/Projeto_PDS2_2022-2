@@ -14,7 +14,7 @@ class Cardapio{
   public:
     std::vector<Produto> get_cardapio();
     void mostrar_cardapio_alfabetico();
-    std::string cardapio_mais_vendidos();
+    void mostrar_cardapio_mais_vendidos();
     void inserir_produto();
     void remover_produto();
     long unsigned int num_produtos();

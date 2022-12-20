@@ -106,56 +106,63 @@ int main(){
           }
           break;
 
-        case c_Gerente:
-          std::cout << "--------------------------------------------------\n";
-          std::cout << "    O que deseja fazer agora?\n";
-          std::cout << "1 - Mostrar produtos mais vendidos do cardápio\n";
-          std::cout << "2 - Mostrar produtos do cardápio em ordem alfabética\n";
-          std::cout << "3 - Alterar cardápio \n";
-          std::cout << "4 - Sair\n";
-          std::cout << "--------------------------------------------------\n";
+        case c_Gerente:{
+          command = 0;
+          while(command != 4){
+            std::cout << "--------------------------------------------------\n";
+            std::cout << "O que deseja fazer agora?\n";
+            std::cout << "1 - Mostrar finanças\n";
+            std::cout << "2 - Mostrar produtos mais vendidos do cardápio\n";
+            std::cout << "3 - Alterar cardápio \n";
+            std::cout << "4 - Logout\n";
+            std::cout << "--------------------------------------------------\n";
 
-          std::cin >> command;
-          std::cin.get();
-          switch(command){
-            case 1:{
-              // login.mostrar_cardapio_mais_vendidos(data.get_cardapio());
-              break;
-            }
-            case 2:{
-              data._cardapio.mostrar_cardapio_alfabetico();
-              break;
-            }
-            case 3:{
-              std::cout << "1 - Adicionar Produto\n";
-              std::cout << "2 - Remover Produto\n";
-              std::cout << "3 - Voltar\n";
+            std::cin >> command;
+            std::cin.get();
 
-              std::cin >> command;
-              std::cin.get();
-              switch(command){
-                case 1:{
-                  data._cardapio.inserir_produto();
-                  break;
-                }
-                case 2:{
-                  data._cardapio.remover_produto();
-                  break;
-                }
-                case 3:{
-                  break;
+            switch(command){
+              case 1:{
+                //TODO
+                break;
+              }
+              case 2:{
+                data._cardapio.mostrar_cardapio_mais_vendidos();
+                break;
+              }
+              case 3:{
+                command = 0;
+                while(command != 4){
+                  std::cout << "--------------------------------------------------\n";
+                  std::cout << "Alterando o cardápio.\n";
+                  std::cout << "1 - Mostrar cardápio\n";
+                  std::cout << "2 - Adicionar produto\n";
+                  std::cout << "3 - Remover produto\n";
+                  std::cout << "4 - Voltar\n";
+                  std::cout << "--------------------------------------------------\n";
+
+                  std::cin >> command;
+                  std::cin.get();
+
+                  switch(command){
+                    case 1:{
+                      data._cardapio.mostrar_cardapio_alfabetico();
+                      break;
+                    }
+                    case 2:{
+                      data._cardapio.inserir_produto();
+                      break;
+                    }
+                    case 3:{
+                      data._cardapio.remover_produto();
+                      break;
+                    }
+                  }
                 }
               }
-              break;
             }
-            case 4:{
-              nivel_de_acesso = c_Nenhum;
-              break;
-            }
-            default:
-              break;
-            break;
           }
+          nivel_de_acesso = c_Nenhum;
+        }
       }
     }
   }
