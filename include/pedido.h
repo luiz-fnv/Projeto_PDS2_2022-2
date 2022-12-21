@@ -18,6 +18,7 @@ class Pedido{
     std::string _endereco_pedido;
     double _preco_total;
   public:
+    Pedido(std::vector<Produto> lista_produtos, std::string endereco_pedido);
     void add_prod(Produto prod);
     void print_descricao_pedido();
     double get_preco();

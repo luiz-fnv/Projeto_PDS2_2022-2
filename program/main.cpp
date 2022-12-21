@@ -55,9 +55,8 @@ int main(){
               break;
             }
             case 2:{
-              /* Pedido novo;
               data.criar_pedido();
-              break; */
+              break; 
             }
             case 3:{
               std::cout << "Esperamos que tenha tido uma boa experiência! Avalie seu pedido com uma nota de 1 a 5" << std::endl;
