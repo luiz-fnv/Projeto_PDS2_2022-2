@@ -44,3 +44,29 @@ std::vector<Produto> Restaurante::mais_lucrativos()
 
     return maior_lucro;
 }
+
+std::vector<Produto> Restaurante::mais_vendidos()
+{
+    std::vector<Produto> mais_vendidos;
+
+    for (long unsigned int i = 0; i < _cardapio.size(); i++)
+    {
+        mais_vendidos.push_back(_cardapio[i]);
+    }
+
+    Produto aux = mais_vendidos[0];
+
+    for (long unsigned int i = 0; i < mais_vendidos.size(); i++)
+    {
+        for (long unsigned int j = i; j < mais_vendidos.size(); j++)
+        {
+            if (mais_vendidos[i].get_vendidos() < mais_vendidos[j].get_vendidos())
+            {
+                aux = mais_vendidos[i];
+                mais_vendidos[i] = mais_vendidos[j];
+                mais_vendidos[j] = aux;
+            }
+        }
+    }
+    return mais_vendidos;
+}

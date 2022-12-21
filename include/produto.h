@@ -13,7 +13,6 @@ private:
   unsigned int _vendidos = 0;
   std::vector<int> historico_avaliacoes;
   double _avaliacao;
-
 public:
   Produto(std::string nome, double preco);
   unsigned int get_vendidos();

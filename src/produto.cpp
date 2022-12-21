@@ -5,8 +5,8 @@ Produto::Produto(std::string nome, double preco)
 {
   _nome = nome;
   _preco = preco;
-  _vendidos = 0;
   _avaliacao = 0;
+  _vendidos = 0;
 }
 
 unsigned int Produto::get_vendidos()
