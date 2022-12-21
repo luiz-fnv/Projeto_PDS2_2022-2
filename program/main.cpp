@@ -89,14 +89,23 @@ int main(){
               break;
             }
             case 2:{
-
+              int num_pedido;
+              std::cout << "Digite o número do pedido que será alterado: ";
+              std::cin >> num_pedido;
+              if(num_pedido != 0){
+                num_pedido = num_pedido-1;
+              }
+              data.alterar_pedido(num_pedido);
+              std::cout << "O estado do pedido " << num_pedido + 1 << " foi alterado com sucesso!\n";
               break;
             }
-            case 3:{ //CONSERTAR NÃO TA FUNCIONANDO
+            case 3:{ 
               int num_pedido;
               std::cout << "Digite o número do pedido a ser cancelado: ";
               std::cin >> num_pedido;
-              if(num_pedido != 0){num_pedido = num_pedido-1;}
+              if(num_pedido != 0){
+                num_pedido = num_pedido-1;
+              }
               data.cancelar_pedido(num_pedido);
               std::cout << "O pedido " << num_pedido + 1 << " foi cancelado com sucesso!\n";
               break;
