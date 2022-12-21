@@ -35,7 +35,7 @@ std::string Pedido::get_endereco()
 Estado Pedido::get_estado()
 {
     return _estado;
-    /* std::string desc_estado;
+    /*std::string desc_estado;
     if (_estado == 0)
     {
         desc_estado = "O pedido está sendo preparado.";

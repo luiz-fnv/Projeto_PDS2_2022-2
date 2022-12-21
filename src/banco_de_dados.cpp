@@ -28,9 +28,9 @@ void Banco_de_dados::inserir_pedido(Pedido novo_pedido){
   return;
 } */
 
-void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
+/*void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
   pedido_concluido.mudar_estado(concluido);
-}
+}*/
 
 /* void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
   bool encontrado = false;
@@ -49,6 +49,13 @@ void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
 
 void Banco_de_dados::cancelar_pedido(int indice){
   BancoDePedidos.at(indice).mudar_estado(cancelado);
+}
+
+void Banco_de_dados::alterar_pedido(int indice){
+  if(BancoDePedidos.at(indice).get_estado() == enviado)
+    BancoDePedidos.at(indice).mudar_estado(concluido);
+  if(BancoDePedidos.at(indice).get_estado() == preparacao)
+    BancoDePedidos.at(indice).mudar_estado(enviado);
 }
 
 void Banco_de_dados::criar_pedido(){
@@ -74,12 +81,14 @@ void Banco_de_dados::criar_pedido(){
 
 void Banco_de_dados::mostrar_pedidos(){
   for(unsigned int aux = 0; aux < BancoDePedidos.size(); aux++){
-    if(BancoDePedidos[aux].get_estado() == cancelado){
+    if(BancoDePedidos[aux].get_estado() == cancelado)
       std::cout << "Pedido " << aux+1 << ":" << "(CANCELADO)" << std::endl;
-    }
-    else{
-      std::cout << "Pedido " << aux+1 << ":" << std::endl;
-    }
+    if(BancoDePedidos[aux].get_estado() == preparacao)
+      std::cout << "Pedido " << aux+1 << ":" << "(EM PREPARO)" << std::endl;
+    if(BancoDePedidos[aux].get_estado() == enviado)
+      std::cout << "Pedido " << aux+1 << ":" << "(ENVIADO)" << std::endl;
+    if(BancoDePedidos[aux].get_estado() == concluido)
+      std::cout << "Pedido " << aux+1 << ":" << "(CONCLUÍDO)" << std::endl;
     BancoDePedidos.at(aux).print_descricao_pedido();
   }
 }
