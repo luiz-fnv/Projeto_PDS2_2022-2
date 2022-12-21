@@ -97,7 +97,7 @@ int main(){
               std::cout << "Digite o número do pedido a ser cancelado: ";
               std::cin >> num_pedido;
               if(num_pedido != 0){num_pedido = num_pedido-1;}
-              data.cancelar_pedido(data.get_pedidos()[num_pedido]);
+              data.cancelar_pedido(num_pedido);
               std::cout << "O pedido " << num_pedido + 1 << " foi cancelado com sucesso!\n";
               break;
             }

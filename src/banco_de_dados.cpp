@@ -47,8 +47,8 @@ void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
   return;
 } */
 
-void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
-  pedido_cancelado.mudar_estado(cancelado);
+void Banco_de_dados::cancelar_pedido(int indice){
+  BancoDePedidos.at(indice).mudar_estado(cancelado);
 }
 
 void Banco_de_dados::criar_pedido(){
@@ -68,7 +68,6 @@ void Banco_de_dados::criar_pedido(){
     }
     std::cout << "Informe o endereço onde deseja receber seu pedido:" << std::endl;
     std::getline(std::cin, endereco);
-    //std::cin >> endereco;
     Pedido pedido = Pedido(lista_produtos, endereco);
     inserir_pedido(pedido);
 }

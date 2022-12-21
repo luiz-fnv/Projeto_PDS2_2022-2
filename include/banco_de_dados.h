@@ -22,7 +22,7 @@ class Banco_de_dados{
     void inserir_pedido(Pedido novo_pedido);
     void alterar_pedido(Pedido pedido_alterado);
     void concluir_pedido(Pedido pedido_concluido);
-    void cancelar_pedido(Pedido pedido_cancelado);
+    void cancelar_pedido(int indice);
     void criar_pedido();
     void calcular_lucro();
     void calcular_mais_pedido();
