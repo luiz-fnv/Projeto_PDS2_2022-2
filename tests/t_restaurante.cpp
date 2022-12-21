@@ -9,7 +9,7 @@ TEST_CASE("Teste Restaurante")
     double lucro = 0;
     double avaliacao = 0;
     std::vector<Produto> cardapio;
-    
+
     Produto prod1 = Produto("Hambúrguer", 10.00);
     Produto prod2 = Produto("Pizza", 40.00);
     Produto prod3 = Produto("Agua", 3.00);
@@ -44,7 +44,7 @@ TEST_CASE("Teste Restaurante")
     cardapio[9].add_venda();
 
     Restaurante rest1 = Restaurante(lucro, avaliacao, cardapio);
-    
+
     CHECK_EQ(195, rest1.calcular_lucro_dia());
     std::vector<Produto> mais_lucrativos = rest1.mais_lucrativos();
 
@@ -76,7 +76,7 @@ TEST_CASE("Teste Restaurante")
     CHECK_EQ(5, mais_lucrativos[8].get_preco());
 
     CHECK_EQ("Agua", mais_lucrativos[9].get_nome());
-    CHECK_EQ(3, mais_lucrativos[9].get_preco());    
+    CHECK_EQ(3, mais_lucrativos[9].get_preco());
 }
 
 TEST_CASE("Testa vendidos")
@@ -84,7 +84,7 @@ TEST_CASE("Testa vendidos")
     double lucro2 = 0;
     double avaliacao2 = 0;
     std::vector<Produto> cardapio2;
-    
+
     Produto prod1 = Produto("Hambúrguer", 10.00);
     Produto prod2 = Produto("Pizza", 40.00);
     Produto prod3 = Produto("Agua", 3.00);
@@ -127,7 +127,7 @@ TEST_CASE("Testa vendidos")
     cardapio2[7].add_venda();
     cardapio2[7].add_venda();
     cardapio2[7].add_venda();
-    
+
     cardapio2[0].add_venda();
     cardapio2[0].add_venda();
     cardapio2[0].add_venda();
@@ -172,7 +172,6 @@ TEST_CASE("Testa vendidos")
 
     cardapio2[6].add_venda();
 
-
     Restaurante rest2 = Restaurante(lucro2, avaliacao2, cardapio2);
 
     std::vector<Produto> mais_vendidos = rest2.mais_vendidos();
@@ -187,7 +186,6 @@ TEST_CASE("Testa vendidos")
     CHECK_EQ(3, cardapio2[2].get_vendidos());
     CHECK_EQ(2, cardapio2[9].get_vendidos());
     CHECK_EQ(1, cardapio2[6].get_vendidos());
-    
 
     CHECK_EQ("Cerveja", mais_vendidos[0].get_nome());
     CHECK_EQ(5, mais_vendidos[0].get_preco());
@@ -217,5 +215,5 @@ TEST_CASE("Testa vendidos")
     CHECK_EQ(22, mais_vendidos[8].get_preco());
 
     CHECK_EQ("Vinho", mais_vendidos[9].get_nome());
-    CHECK_EQ(60, mais_vendidos[9].get_preco());    
+    CHECK_EQ(60, mais_vendidos[9].get_preco());
 }

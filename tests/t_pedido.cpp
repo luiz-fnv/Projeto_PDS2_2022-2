@@ -94,7 +94,7 @@ TEST_CASE("Testa Pedido")
 
     ped2.mudar_estado(enviado);
     CHECK_EQ(enviado, ped2.get_estado());
-    
+
     ped2.mudar_estado(concluido);
     CHECK_EQ(concluido, ped2.get_estado());
 }

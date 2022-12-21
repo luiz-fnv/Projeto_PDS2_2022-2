@@ -2,7 +2,8 @@
 
 #include "produto.h"
 
-TEST_CASE("Testa Produto"){
+TEST_CASE("Testa Produto")
+{
     Produto prod1 = Produto("Hambúrguer", 10.00);
 
     CHECK_EQ("Hambúrguer", prod1.get_nome());
@@ -30,7 +31,7 @@ TEST_CASE("Testa Produto"){
     CHECK_EQ(3.5, prod1.get_avaliacao());
 
     prod1.add_avaliacao(1); // a7
-    CHECK_EQ(22.0/7.0, prod1.get_avaliacao());
+    CHECK_EQ(22.0 / 7.0, prod1.get_avaliacao());
 
     prod1.add_avaliacao(4); // a8
     CHECK_EQ(3.25, prod1.get_avaliacao());
@@ -64,16 +65,16 @@ TEST_CASE("Testa Produto"){
     CHECK_EQ(3.4, prod2.get_avaliacao());
 
     prod2.add_avaliacao(5); // a6
-    CHECK_EQ(11.0/3.0, prod2.get_avaliacao());
+    CHECK_EQ(11.0 / 3.0, prod2.get_avaliacao());
 
     prod2.add_avaliacao(1); // a7
-    CHECK_EQ(23.0/7.0, prod2.get_avaliacao());
+    CHECK_EQ(23.0 / 7.0, prod2.get_avaliacao());
 
     prod2.add_avaliacao(3); // a8
     CHECK_EQ(3.25, prod2.get_avaliacao());
 
     prod2.add_avaliacao(4); // a9
-    CHECK_EQ(10.0/3.0, prod2.get_avaliacao());
+    CHECK_EQ(10.0 / 3.0, prod2.get_avaliacao());
 
     prod2.add_avaliacao(5); // a10
     CHECK_EQ(3.5, prod2.get_avaliacao());
@@ -104,14 +105,14 @@ TEST_CASE("Testa Produto"){
     CHECK_EQ(2.5, prod3.get_avaliacao());
 
     prod3.add_avaliacao(4); // a7
-    CHECK_EQ(19.0/7.0, prod3.get_avaliacao());
+    CHECK_EQ(19.0 / 7.0, prod3.get_avaliacao());
 
     prod3.add_avaliacao(1); // a8
     CHECK_EQ(2.5, prod3.get_avaliacao());
 
     prod3.add_avaliacao(3); // a9
-    CHECK_EQ(23.0/9.0, prod3.get_avaliacao());
-    
+    CHECK_EQ(23.0 / 9.0, prod3.get_avaliacao());
+
     prod3.add_avaliacao(1); // a10
     CHECK_EQ(2.4, prod3.get_avaliacao());
 }

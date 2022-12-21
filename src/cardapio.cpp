@@ -15,20 +15,6 @@ void Cardapio::padrao()
   _cardapio.push_back(Produto("Cachorro-Quente", 8.00, 18, 4.6));
   _cardapio.push_back(Produto("Espetinho", 5.00, 30, 4.8));
   _cardapio.push_back(Produto("Porção", 22.00, 9, 4.5));
-
-  /*Produto prod1 = Produto("Hambúrguer", 10.00);
-  Produto prod2 = Produto("Pizza", 40.00);
-  Produto prod3 = Produto("Agua", 3.00);
-  Produto prod4 = Produto("Cerveja", 5.00);
-  Produto prod5 = Produto("Batata", 12.00);
-  Produto prod6 = Produto("Lasanha", 30.00);
-  Produto prod7 = Produto("Vinho", 60.00);
-  Produto prod8 = Produto("Cachorro-Quente", 8.00);
-  Produto prod9 = Produto("Espetinho", 5.00);
-  Produto prod10 = Produto("Porção", 22.00);
-
-  prod1.set_avalicao(4);
-  prod1.set_vendidos(10);*/
 }
 
 void Cardapio::inserir_produto()
@@ -123,31 +109,6 @@ bool sort_vendas(unsigned int a, unsigned int b)
 {
   return a > b;
 }
-
-/* void Cardapio::mostrar_cardapio_mais_vendidos(){
-  if(_cardapio.size()==0){
-    std::cout << "--------------------------------------------------\n";
-    std::cout << "O cardápio está vazio.\n";
-    return;
-  }
-
-  Cardapio temporario;
-  temporario._cardapio = _cardapio;
-  std::vector<unsigned int> num_vendas;
-
-  for(unsigned long int i = 0; i < _cardapio.size(); i++){
-    num_vendas.push_back(temporario._cardapio[i].get_vendidos());
-  }
-  std::sort(num_vendas.begin(), num_vendas.end(), sort_vendas);
-
-  for(unsigned long int i = 0; i < num_vendas.size(); i++){
-    for(auto j = _cardapio.begin(); j != _cardapio.end(); j++){
-      if(num_vendas[i] == (*j).get_vendidos()){
-        std::cout << (*j).descricao_produto();
-      }
-    }
-  }
-} */
 
 void Cardapio::mostrar_cardapio_mais_vendidos()
 {

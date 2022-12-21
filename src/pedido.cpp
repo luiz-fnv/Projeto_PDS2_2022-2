@@ -37,24 +37,6 @@ std::string Pedido::get_endereco()
 Estado Pedido::get_estado()
 {
     return _estado;
-    /*std::string desc_estado;
-    if (_estado == 0)
-    {
-        desc_estado = "O pedido está sendo preparado.";
-    }
-    else if (_estado == 1)
-    {
-        desc_estado = "O pedido já foi enviado.";
-    }
-    else if (_estado == 2)
-    {
-        desc_estado = "O pedido foi concluído";
-    }
-    else if (_estado == 3)
-    {
-        desc_estado = "O pedido foi cancelado pelo cliente";
-    }
-    return desc_estado; */
 }
 
 double Pedido::get_preco()
