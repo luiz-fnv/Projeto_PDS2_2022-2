@@ -48,11 +48,13 @@
     - Comunicação com o restaurante/entregador
     - Ter atualizações sobre o pedido
     
-## Para compilar:
+## Para compilar, executar e testar:
 
 - Clone o repositório do github.
 - Rodar o comando `make` no terminal na pasta do repositório.
 - Na pasta bin, rodar o comando `./main`.
+- Também é possível executar com o comando `make run` na linha de comando.
+- Através do comando `make tests` é possível fazer rodar os testes de unidade realizados no programa.
 
 ## Integrantes:
 
@@ -60,4 +62,3 @@
 - João Henrique Menezes 
 - Luis Fernando Raposo
 - Luiz Felipe Nogueira Varandas
-  
