@@ -1,12 +1,7 @@
 #include "../include/pedido.h"
 
-Pedido::Pedido(std::vector<Produto> lista_produtos, std::string endereco_pedido){
-    _lista_produtos = lista_produtos;
-    _endereco_pedido = endereco_pedido;
-    }
-
 void Pedido::add_prod(Produto prod){
-    _lista_produtos.push_back(prod);
+    
 }
 
 void Pedido::print_descricao_pedido(){

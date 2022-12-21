@@ -49,24 +49,21 @@ void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
 } */
 
 void Banco_de_dados::criar_pedido(){
+    Pedido pedido;
     std::cout << "Digite os produtos que deseja pedir, um em cada linha. Digite * quando quiser encerrar" << std::endl;
-    std::string prods, endereco;
-    std::vector<Produto> lista_produtos;
+    std::string prods;
 
     while(prods != "*"){
         std::getline(std::cin, prods);
         for(Produto i : _cardapio.get_cardapio()){
             if(prods == i.get_nome()){
-                lista_produtos.push_back(i);
+                pedido.add_prod(i);
             }
         }
         if(prods == "*"){
             break;
         }
     }
-    std::cout << "Informe o endereço onde deseja receber seu pedido:" << std::endl;
-    std::cin >> endereco;
-    Pedido pedido = Pedido(lista_produtos, endereco);
     inserir_pedido(pedido);
 }
 
