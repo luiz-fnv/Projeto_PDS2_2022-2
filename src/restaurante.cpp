@@ -1,17 +1,19 @@
 #include "../include/restaurante.h"
 #include "../include/banco_de_dados.h"
 
-Restaurante::Restaurante(double lucro, double avaliacao)
+Restaurante::Restaurante(double lucro, double avaliacao, std::vector<Produto> cardapio)
 {
     _lucro = lucro;
     _avaliacao = avaliacao;
+    _cardapio = cardapio;
 }
 
 double Restaurante::calcular_lucro_dia()
 {
+
     for (long unsigned int i = 0; i < _cardapio.size(); i++)
     {
-        _lucro = _cardapio[i].get_lucro();
+        _lucro += _cardapio[i].get_lucro();
     }
     return _lucro;
 }
@@ -19,22 +21,26 @@ double Restaurante::calcular_lucro_dia()
 std::vector<Produto> Restaurante::mais_lucrativos()
 {
     std::vector<Produto> maior_lucro;
-    Produto aux = maior_lucro[0];
+    
     for (long unsigned int i = 0; i < _cardapio.size(); i++)
     {
-        maior_lucro[i] = _cardapio[i];
+        maior_lucro.push_back(_cardapio[i]);
     }
-    for (long unsigned int i = 0; i < _cardapio.size() - 1; i++)
+
+    Produto aux = maior_lucro[0];
+
+    for (long unsigned int i = 0; i < maior_lucro.size(); i++)
     {
-        for (long unsigned int j = i; j < _cardapio.size() - 1; j++)
+        for (long unsigned int j = i; j < maior_lucro.size(); j++)
         {
-            if (_cardapio[i].get_lucro() < _cardapio[j].get_lucro())
+            if (maior_lucro[i].get_lucro() < maior_lucro[j].get_lucro())
             {
-                aux = _cardapio[i];
-                _cardapio[i] = _cardapio[j];
-                _cardapio[j] = aux;
+                aux = maior_lucro[i];
+                maior_lucro[i] = maior_lucro[j];
+                maior_lucro[j] = aux;
             }
         }
     }
+
     return maior_lucro;
 }

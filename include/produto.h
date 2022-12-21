@@ -21,6 +21,7 @@ class Produto{
     double get_lucro();
     double get_avaliacao();
     void add_avaliacao(int nova_avaliacao);
+    void add_venda();
     std::string descricao_produto();
 };
 
