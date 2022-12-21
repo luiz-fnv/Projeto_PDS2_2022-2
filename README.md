@@ -1,6 +1,6 @@
 # Projeto_PDS2_2022-2
 
-## User Stories
+## User Stories:
 
 1. Como dono do restaurante eu gostaria de ser capaz de ter uma visão financeira facilitada pela visualização do saldo diário e dos produtos mais lucrativos para poder administrar melhor o estabelecimento.
 
@@ -47,12 +47,17 @@
     
     - Comunicação com o restaurante/entregador
     - Ter atualizações sobre o pedido
-
-
-    <ins>Integrantes:</ins>
     
-    - Fábio da Silva Duarte
-    - João Henrique Menezes 
-    - Luis Fernando Raposo
-    - Luiz Felipe Nogueira Varandas
+## Para compilar:
+
+- Clone o repositório do github.
+- Rodar o comando `make` no terminal na pasta do repositório.
+- Na pasta bin, rodar o comando `./main`.
+
+## Integrantes:
+
+- Fábio da Silva Duarte
+- João Henrique Menezes 
+- Luis Fernando Raposo
+- Luiz Felipe Nogueira Varandas
   
