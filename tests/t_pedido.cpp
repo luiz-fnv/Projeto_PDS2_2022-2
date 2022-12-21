@@ -20,19 +20,19 @@ TEST_CASE("Testa Pedido"){
     CHECK_EQ(58, ped1.get_preco());
     ped1.add_prod(prod5);
     CHECK_EQ(70, ped1.get_preco());
-    CHECK_EQ("O pedido está sendo preparado.", ped1.get_estado());
+    CHECK_EQ(preparacao, ped1.get_estado());
     ped1.mudar_estado(enviado);
-    CHECK_EQ("O pedido já foi enviado.", ped1.get_estado());
+    CHECK_EQ(enviado, ped1.get_estado());
     ped1.mudar_estado(preparacao);
-    CHECK_EQ("O pedido está sendo preparado.", ped1.get_estado());
+    CHECK_EQ(preparacao, ped1.get_estado());
     ped1.mudar_estado(concluido);
-    CHECK_EQ("O pedido foi concluído", ped1.get_estado());
+    CHECK_EQ(concluido, ped1.get_estado());
     ped1.mudar_estado(preparacao);
-    CHECK_EQ("O pedido está sendo preparado.", ped1.get_estado());
+    CHECK_EQ(preparacao, ped1.get_estado());
     ped1.mudar_estado(cancelado);
-    CHECK_EQ("O pedido foi cancelado pelo cliente", ped1.get_estado());
+    CHECK_EQ(cancelado, ped1.get_estado());
     ped1.mudar_estado(preparacao);
-    CHECK_EQ("O pedido está sendo preparado.", ped1.get_estado());
+    CHECK_EQ(preparacao, ped1.get_estado());
 
     Produto prod6 = Produto("Lasanha", 30.00);
     Produto prod7 = Produto("Vinho", 60.00);
@@ -63,9 +63,9 @@ TEST_CASE("Testa Pedido"){
     CHECK_EQ(173, ped2.get_preco());
     ped2.add_prod(prod10);
     CHECK_EQ(195, ped2.get_preco());
-    CHECK_EQ("O pedido está sendo preparado.", ped2.get_estado());
+    CHECK_EQ(preparacao, ped2.get_estado());
     ped2.mudar_estado(enviado);
-    CHECK_EQ("O pedido já foi enviado.", ped2.get_estado());
+    CHECK_EQ(enviado, ped2.get_estado());
     ped2.mudar_estado(concluido);
-    CHECK_EQ("O pedido foi concluído", ped2.get_estado());
+    CHECK_EQ(concluido, ped2.get_estado());
 }
