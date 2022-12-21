@@ -24,7 +24,8 @@ class Pedido{
     void print_descricao_pedido();
     double get_preco();
     std::string get_endereco();
-    std::string get_estado();
+    Estado get_estado();
+    std::vector<Produto> get_produtos();
     void mudar_estado(Estado novo);
 };
 

@@ -33,10 +33,9 @@ void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
 }
 
 /* void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
-  auto it = BancoDePedidos.begin();
   bool encontrado = false;
-  for(; it != BancoDePedidos.end(); it++)
-    if(it->get_pedido() == pedido_cancelado.get_pedido()){
+  for(auto it = BancoDePedidos.begin(); it != BancoDePedidos.end(); it++)
+    if(it->get_produtos() == pedido_cancelado.get_produtos() && it->){
       encontrado = true;
       break;
     }
@@ -47,6 +46,10 @@ void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
   it->cancela_estado();
   return;
 } */
+
+void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
+  pedido_cancelado.mudar_estado(cancelado);
+}
 
 void Banco_de_dados::criar_pedido(){
     std::cout << "Digite os produtos que deseja pedir, um em cada linha. Digite * quando quiser encerrar" << std::endl;
@@ -64,18 +67,28 @@ void Banco_de_dados::criar_pedido(){
         }
     }
     std::cout << "Informe o endereço onde deseja receber seu pedido:" << std::endl;
-    std::cin >> endereco;
+    std::getline(std::cin, endereco);
+    //std::cin >> endereco;
     Pedido pedido = Pedido(lista_produtos, endereco);
     inserir_pedido(pedido);
 }
 
 void Banco_de_dados::mostrar_pedidos(){
   for(unsigned int aux = 0; aux < BancoDePedidos.size(); aux++){
+    if(BancoDePedidos[aux].get_estado() == cancelado){
+      std::cout << "Pedido " << aux+1 << ":" << "(CANCELADO)" << std::endl;
+    }
+    else{
       std::cout << "Pedido " << aux+1 << ":" << std::endl;
+    }
     BancoDePedidos.at(aux).print_descricao_pedido();
   }
 }
 
 Cardapio Banco_de_dados::get_cardapio(){
   return _cardapio;
+}
+
+std::vector<Pedido> Banco_de_dados::get_pedidos(){
+  return BancoDePedidos;
 }

@@ -29,6 +29,7 @@ class Banco_de_dados{
     void terminar_dia();
     void mostrar_pedidos();
     void mostrar_avaliacoes();
+    std::vector<Pedido> get_pedidos();
 
     Cardapio get_cardapio();
     

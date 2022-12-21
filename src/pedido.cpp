@@ -32,9 +32,10 @@ std::string Pedido::get_endereco()
     return _endereco_pedido;
 }
 
-std::string Pedido::get_estado()
+Estado Pedido::get_estado()
 {
-    std::string desc_estado;
+    return _estado;
+    /* std::string desc_estado;
     if (_estado == 0)
     {
         desc_estado = "O pedido está sendo preparado.";
@@ -51,7 +52,7 @@ std::string Pedido::get_estado()
     {
         desc_estado = "O pedido foi cancelado pelo cliente";
     }
-    return desc_estado;
+    return desc_estado; */
 }
 
 double Pedido::get_preco()
@@ -62,6 +63,10 @@ double Pedido::get_preco()
         _preco_total += _lista_produtos[i].get_preco();
     }
     return _preco_total;
+}
+
+std::vector<Produto> Pedido::get_produtos(){
+    return _lista_produtos;
 }
 
 void Pedido::mudar_estado(Estado novo)

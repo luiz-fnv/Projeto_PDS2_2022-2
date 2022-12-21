@@ -92,8 +92,13 @@ int main(){
 
               break;
             }
-            case 3:{
-
+            case 3:{ //CONSERTAR NÃO TA FUNCIONANDO
+              int num_pedido;
+              std::cout << "Digite o número do pedido a ser cancelado: ";
+              std::cin >> num_pedido;
+              if(num_pedido != 0){num_pedido = num_pedido-1;}
+              data.cancelar_pedido(data.get_pedidos()[num_pedido]);
+              std::cout << "O pedido " << num_pedido + 1 << " foi cancelado com sucesso!\n";
               break;
             }
             case 4:{
@@ -157,6 +162,7 @@ int main(){
                     }
                   }
                 }
+                command = 0;
               }
             }
           }
