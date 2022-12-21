@@ -26,7 +26,7 @@ void Pedido::print_descricao_pedido()
         std::cout << i.descricao_produto();
     }
     std::cout << "Endereço: " << _endereco_pedido << std::endl;
-    std::endl;
+    std::cout << std::endl;
 }
 
 std::string Pedido::get_endereco()

@@ -21,7 +21,6 @@ class Banco_de_dados{
     //operações com Banco de Pedidos (todas não feitas)
     void inserir_pedido(Pedido novo_pedido);
     void alterar_pedido(int indice);
-    //void concluir_pedido(Pedido pedido_concluido);
     void cancelar_pedido(int indice);
     void criar_pedido();
     void calcular_lucro();

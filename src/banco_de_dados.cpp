@@ -9,44 +9,6 @@ void Banco_de_dados::inserir_pedido(Pedido novo_pedido){
   return;
 }
 
-/* void Banco_de_dados::alterar_pedido(Pedido pedido_alterado){
-  auto it = BancoDePedidos.begin();
-  bool encontrado = false;
-  for(; it != BancoDePedidos.end(); it++)
-    if(it->get_pedido() == pedido_alterado.get_pedido()){
-      encontrado = true;
-      break;
-    }
-  if(encontrado == false){
-      std::cout << "Pedido não encontrado" << std::endl;
-      return;
-    }
-  std::string atualizacao;
-  std::cout << "Digite a nova situação do pedido:" << std::endl;
-  std::cin >> atualizacao;
-  it->atualiza_estado(atualizacao);
-  return;
-} */
-
-/*void Banco_de_dados::concluir_pedido(Pedido pedido_concluido){
-  pedido_concluido.mudar_estado(concluido);
-}*/
-
-/* void Banco_de_dados::cancelar_pedido(Pedido pedido_cancelado){
-  bool encontrado = false;
-  for(auto it = BancoDePedidos.begin(); it != BancoDePedidos.end(); it++)
-    if(it->get_produtos() == pedido_cancelado.get_produtos() && it->){
-      encontrado = true;
-      break;
-    }
-  if(encontrado == false){
-      std::cout << "Pedido não encontrado" << std::endl;
-      return;
-    }
-  it->cancela_estado();
-  return;
-} */
-
 void Banco_de_dados::cancelar_pedido(int indice){
   BancoDePedidos.at(indice).mudar_estado(cancelado);
 }
