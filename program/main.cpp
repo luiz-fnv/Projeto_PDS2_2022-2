@@ -6,6 +6,8 @@ int main()
 {
   Banco_de_dados data;
 
+  data._cardapio.padrao();
+
   data.inserir_conta("Gerente_a", "12984", c_Gerente);
   data.inserir_conta("Funcionario_a", "42710", c_Funcionario);
 
@@ -156,11 +158,15 @@ int main()
           {
           case 1:
           {
-            // TODO
+            Restaurante r1 = Restaurante(0, 0, data._cardapio.get_cardapio());
+            double lucro_do_dia = r1.calcular_lucro_dia();
+            std::cout << "O lucro do dia é "
+                      << "R$ " << lucro_do_dia << std::endl;
             break;
           }
           case 2:
           {
+
             data._cardapio.mostrar_cardapio_mais_vendidos();
             break;
           }

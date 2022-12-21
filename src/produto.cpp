@@ -5,8 +5,26 @@ Produto::Produto(std::string nome, double preco)
 {
   _nome = nome;
   _preco = preco;
-  _avaliacao = 0;
   _vendidos = 0;
+  _avaliacao = 0;
+}
+
+Produto::Produto(std::string nome, double preco, unsigned int vendidos, double avaliacao)
+{
+  _nome = nome;
+  _preco = preco;
+  _vendidos = vendidos;
+  _avaliacao = avaliacao;
+}
+
+void Produto::set_avalicao(double nova_avaliacao)
+{
+  _avaliacao = nova_avaliacao;
+}
+
+void Produto::set_vendidos(double novo_vendidos)
+{
+  _vendidos = novo_vendidos;
 }
 
 unsigned int Produto::get_vendidos()

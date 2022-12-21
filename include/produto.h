@@ -10,12 +10,16 @@ class Produto
 private:
   std::string _nome;
   double _preco;
-  unsigned int _vendidos = 0;
   std::vector<int> historico_avaliacoes;
+  unsigned int _vendidos;
   double _avaliacao;
+
 public:
   Produto(std::string nome, double preco);
+  Produto(std::string nome, double preco, unsigned int vendidos, double avaliacao);
   unsigned int get_vendidos();
+  void set_avalicao(double nova_avaliacao);
+  void set_vendidos(double novo_vendidos);
   std::string get_nome();
   double get_preco();
   double get_lucro();

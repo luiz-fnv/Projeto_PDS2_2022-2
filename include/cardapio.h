@@ -16,6 +16,7 @@ private:
 
 public:
   std::vector<Produto> get_cardapio();
+  void padrao();
   void mostrar_cardapio_alfabetico();
   void mostrar_cardapio_mais_vendidos();
   void inserir_produto();

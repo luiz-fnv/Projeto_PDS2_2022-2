@@ -2,6 +2,35 @@
 #include <algorithm>
 #include <iostream>
 
+void Cardapio::padrao()
+{
+
+  _cardapio.push_back(Produto("Hambúrguer", 10.00, 10, 4.3));
+  _cardapio.push_back(Produto("Pizza", 40.00, 3, 4.2));
+  _cardapio.push_back(Produto("Agua", 3.00, 12, 3.9));
+  _cardapio.push_back(Produto("Cerveja", 5.00, 20, 4.7));
+  _cardapio.push_back(Produto("Batata", 12.00, 12, 4.1));
+  _cardapio.push_back(Produto("Lasanha", 30.00, 2, 4.0));
+  _cardapio.push_back(Produto("Vinho", 60.00, 1, 5));
+  _cardapio.push_back(Produto("Cachorro-Quente", 8.00, 18, 4.6));
+  _cardapio.push_back(Produto("Espetinho", 5.00, 30, 4.8));
+  _cardapio.push_back(Produto("Porção", 22.00, 9, 4.5));
+
+  /*Produto prod1 = Produto("Hambúrguer", 10.00);
+  Produto prod2 = Produto("Pizza", 40.00);
+  Produto prod3 = Produto("Agua", 3.00);
+  Produto prod4 = Produto("Cerveja", 5.00);
+  Produto prod5 = Produto("Batata", 12.00);
+  Produto prod6 = Produto("Lasanha", 30.00);
+  Produto prod7 = Produto("Vinho", 60.00);
+  Produto prod8 = Produto("Cachorro-Quente", 8.00);
+  Produto prod9 = Produto("Espetinho", 5.00);
+  Produto prod10 = Produto("Porção", 22.00);
+
+  prod1.set_avalicao(4);
+  prod1.set_vendidos(10);*/
+}
+
 void Cardapio::inserir_produto()
 {
   std::string nome_produto_adicionado;
@@ -92,7 +121,7 @@ void Cardapio::mostrar_cardapio_alfabetico()
 
 bool sort_vendas(unsigned int a, unsigned int b)
 {
-  return a < b;
+  return a > b;
 }
 
 /* void Cardapio::mostrar_cardapio_mais_vendidos(){
@@ -128,14 +157,25 @@ void Cardapio::mostrar_cardapio_mais_vendidos()
     std::cout << "O cardápio está vazio.\n";
     return;
   }
-  else
+
+  Cardapio temporario;
+  temporario._cardapio = _cardapio;
+  std::vector<unsigned int> q_vendidos;
+
+  for (unsigned long int i = 0; i < _cardapio.size(); i++)
   {
-    Restaurante rest1 = Restaurante(0, 0, _cardapio);
-    std::vector<Produto> mais_vendidos = rest1.mais_vendidos();
-    
-    for (auto i = mais_vendidos.begin(); i != mais_vendidos.end(); i++)
+    q_vendidos.push_back(temporario._cardapio[i].get_vendidos());
+  }
+  std::sort(q_vendidos.begin(), q_vendidos.end(), sort_vendas);
+
+  for (unsigned long int i = 0; i < q_vendidos.size(); i++)
+  {
+    for (auto j = _cardapio.begin(); j != _cardapio.end(); j++)
     {
-      std::cout << (*i).descricao_produto();
+      if (q_vendidos[i] == (*j).get_vendidos())
+      {
+        std::cout << (*j).descricao_produto();
+      }
     }
   }
 }
