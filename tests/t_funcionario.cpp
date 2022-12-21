@@ -1,4 +1,4 @@
-#include "doctest.h"
+/*#include "doctest.h"
 
 #include "funcionario.h"
 
@@ -13,3 +13,4 @@ TEST_CASE("Testa Funcionário"){
     CHECK_EQ("senha_dificil", func2.get_senha());
     CHECK_EQ(1, func2.get_cargo());
 }
+*/

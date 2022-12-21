@@ -1,4 +1,4 @@
-#include "doctest.h"
+/*#include "doctest.h"
 
 #include "gerente.h"
 
@@ -12,4 +12,4 @@ TEST_CASE("Testa Gerente"){
     CHECK_EQ("Roberto", ger2.get_nome());
     CHECK_EQ("rob44", ger2.get_senha());
     CHECK_EQ(2, ger2.get_cargo());
-}
+}*/

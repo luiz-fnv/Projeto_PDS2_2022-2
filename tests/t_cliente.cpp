@@ -1,4 +1,4 @@
-#include "doctest.h"
+/*#include "doctest.h"
 
 #include "cliente.h"
 #include "pedido.h"
@@ -16,5 +16,5 @@ TEST_CASE("Testa Cliente")
     CHECK_EQ("23765", cliente2.get_senha());
     CHECK_EQ("Rua B, 99 - Bairro das Avenidas", cliente2.get_endereco());
     CHECK_EQ(0, cliente2.get_cargo());
-}
+}*/
 
