@@ -57,3 +57,8 @@ double Produto::get_lucro()
   double lucro = _preco * _vendidos;
   return lucro;
 }
+
+void Produto::add_venda()
+{
+  _vendidos = _vendidos + 1;
+}

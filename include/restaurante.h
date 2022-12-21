@@ -10,7 +10,7 @@ class Restaurante{
     double _avaliacao;
     std::vector<Produto> _cardapio;
   public:
-    Restaurante(double lucro, double avaliacao);
+    Restaurante(double lucro, double avaliacao, std::vector<Produto> _cardapio);
     double calcular_lucro_dia();
     void mostrar_vendas();
     void finalizar_dia();
