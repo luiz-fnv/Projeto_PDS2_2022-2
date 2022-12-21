@@ -7,6 +7,7 @@
 #include <iostream>
 
 #include "produto.h"
+#include "restaurante.h"
 
 class Cardapio
 {

@@ -130,20 +130,10 @@ void Cardapio::mostrar_cardapio_mais_vendidos()
   }
   else
   {
-    std::vector<Produto> temp = _cardapio;
-    for (unsigned int i = 0; i < temp.size(); i++)
-    {
-      for (unsigned int j = i + 1; j < temp.size(); j++)
-      {
-        if (temp[j].get_vendidos() < temp[i].get_vendidos())
-        {
-          Produto temporario = temp[i];
-          temp[i] = temp[j];
-          temp[j] = temporario;
-        }
-      }
-    }
-    for (auto i = temp.begin(); i != temp.end(); i++)
+    Restaurante rest1 = Restaurante(0, 0, _cardapio);
+    std::vector<Produto> mais_vendidos = rest1.mais_vendidos();
+    
+    for (auto i = mais_vendidos.begin(); i != mais_vendidos.end(); i++)
     {
       std::cout << (*i).descricao_produto();
     }
