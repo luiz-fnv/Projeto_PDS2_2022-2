@@ -81,7 +81,7 @@ bool sort_vendas(unsigned int a, unsigned int b){
   return a<b;
 }
 
-void Cardapio::mostrar_cardapio_mais_vendidos(){
+/* void Cardapio::mostrar_cardapio_mais_vendidos(){
   if(_cardapio.size()==0){
     std::cout << "--------------------------------------------------\n";
     std::cout << "O cardápio está vazio.\n";
@@ -102,6 +102,28 @@ void Cardapio::mostrar_cardapio_mais_vendidos(){
       if(num_vendas[i] == (*j).get_vendidos()){
         std::cout << (*j).descricao_produto();
       }
+    }
+  }
+} */
+
+void Cardapio::mostrar_cardapio_mais_vendidos(){
+  if(_cardapio.size()==0){
+    std::cout << "--------------------------------------------------\n";
+    std::cout << "O cardápio está vazio.\n";
+    return;
+  }else{
+    std::vector<Produto> temp = _cardapio;
+    for(int i = 0; i<temp.size(); i++) {
+      for(int j = i+1; j<temp.size(); j++){
+        if(temp[j].get_vendidos() < temp[i].get_vendidos()) {
+          Produto temporario = temp[i];
+          temp[i] = temp[j];
+          temp[j] = temporario;
+        }
+      }
+    }
+    for(auto i = temp.begin(); i != temp.end(); i++){
+      std::cout << (*i).descricao_produto();
     }
   }
 }

@@ -28,6 +28,7 @@ void Banco_de_dados::criar_pedido(){
         std::getline(std::cin, prods);
         for(Produto i : _cardapio.get_cardapio()){
             if(prods == i.get_nome()){
+                i.add_venda();
                 lista_produtos.push_back(i);
             }
         }

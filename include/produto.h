@@ -9,7 +9,7 @@ class Produto{
   private:
     std::string _nome;
     double _preco;
-    unsigned int _vendidos;
+    unsigned int _vendidos = 0;
     std::vector<int> historico_avaliacoes;
     double _avaliacao;
 
