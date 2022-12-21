@@ -5,26 +5,28 @@
 #include <iostream>
 #include "cardapio.h"
 
-enum Cargo{
+enum Cargo
+{
   c_Cliente,
   c_Funcionario,
   c_Gerente,
   c_Nenhum
 };
 
-class Conta{
-  protected:
-    std::string _nome;
-    std::string _senha;
-    Cargo _cargo;
+class Conta
+{
+protected:
+  std::string _nome;
+  std::string _senha;
+  Cargo _cargo;
 
-  public:
-    Conta(std::string nome, std::string senha, Cargo cargo);
+public:
+  Conta(std::string nome, std::string senha, Cargo cargo);
 
-    std::string get_nome() const;
-    std::string get_senha() const;
-    std::string get_cargo_txt() const;
-    int get_cargo() const;
+  std::string get_nome() const;
+  std::string get_senha() const;
+  std::string get_cargo_txt() const;
+  int get_cargo() const;
 };
 
 #endif

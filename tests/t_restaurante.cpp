@@ -9,6 +9,7 @@ TEST_CASE("Teste Restaurante")
     double lucro = 0;
     double avaliacao = 0;
     std::vector<Produto> cardapio;
+    
     Produto prod1 = Produto("Hambúrguer", 10.00);
     Produto prod2 = Produto("Pizza", 40.00);
     Produto prod3 = Produto("Agua", 3.00);
@@ -19,6 +20,7 @@ TEST_CASE("Teste Restaurante")
     Produto prod8 = Produto("Cachorro-Quente", 8.00);
     Produto prod9 = Produto("Espetinho", 5.00);
     Produto prod10 = Produto("Porção", 22.00);
+
     cardapio.push_back(prod1);
     cardapio.push_back(prod2);
     cardapio.push_back(prod3);

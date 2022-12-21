@@ -2,27 +2,30 @@
 #include <algorithm>
 #include <iostream>
 
-void Cardapio::inserir_produto(){
+void Cardapio::inserir_produto()
+{
   std::string nome_produto_adicionado;
   double preco_produto_adicionado;
 
   std::cout << "--------------------------------------------------\n";
   std::cout << "Digite o nome do produto a ser adicionado:\n";
-  std::getline(std::cin,nome_produto_adicionado);
+  std::getline(std::cin, nome_produto_adicionado);
 
   std::cout << "Digite o preço do produto a ser adicionado (apenas o valor numérico):\n";
   std::cin >> preco_produto_adicionado;
   std::cin.get();
 
-  _cardapio.push_back(Produto(nome_produto_adicionado,preco_produto_adicionado));
+  _cardapio.push_back(Produto(nome_produto_adicionado, preco_produto_adicionado));
   std::cout << "--------------------------------------------------\n";
 
   std::cout << "O produto \"" << nome_produto_adicionado << "\" foi adicionado com sucesso.\n";
 }
 
-void Cardapio::remover_produto(){
+void Cardapio::remover_produto()
+{
   std::string nome_do_produto;
-  if(_cardapio.size()==0){
+  if (_cardapio.size() == 0)
+  {
     std::cout << "--------------------------------------------------\n";
     std::cout << "O cardápio está vazio.\n";
     return;
@@ -30,11 +33,13 @@ void Cardapio::remover_produto(){
 
   std::cout << "--------------------------------------------------\n";
   std::cout << "Digite o nome do produto a ser removido:\n";
-  std::getline(std::cin,nome_do_produto);
+  std::getline(std::cin, nome_do_produto);
 
-  for(unsigned int i=0; i < _cardapio.size(); ++i){
-    if(_cardapio.at(i).get_nome() == nome_do_produto){
-      _cardapio.erase(_cardapio.begin()+i);
+  for (unsigned int i = 0; i < _cardapio.size(); ++i)
+  {
+    if (_cardapio.at(i).get_nome() == nome_do_produto)
+    {
+      _cardapio.erase(_cardapio.begin() + i);
       std::cout << "--------------------------------------------------\n";
       std::cout << nome_do_produto << " removido com sucesso.\n";
       return;
@@ -45,15 +50,19 @@ void Cardapio::remover_produto(){
   return;
 }
 
-std::vector<Produto> Cardapio::get_cardapio(){
+std::vector<Produto> Cardapio::get_cardapio()
+{
   return _cardapio;
 }
 
-bool sort_nomes(std::string a, std::string b){
-  return a<b;
+bool sort_nomes(std::string a, std::string b)
+{
+  return a < b;
 }
-void Cardapio::mostrar_cardapio_alfabetico(){
-  if(_cardapio.size()==0){
+void Cardapio::mostrar_cardapio_alfabetico()
+{
+  if (_cardapio.size() == 0)
+  {
     std::cout << "--------------------------------------------------\n";
     std::cout << "O cardápio está vazio.\n";
     return;
@@ -63,22 +72,27 @@ void Cardapio::mostrar_cardapio_alfabetico(){
   temporario._cardapio = _cardapio;
   std::vector<std::string> nomes;
 
-  for(unsigned long int i = 0; i < _cardapio.size(); i++){
+  for (unsigned long int i = 0; i < _cardapio.size(); i++)
+  {
     nomes.push_back(temporario._cardapio[i].get_nome());
   }
   std::sort(nomes.begin(), nomes.end(), sort_nomes);
 
-  for(unsigned long int i = 0; i < nomes.size(); i++){
-    for(auto j = _cardapio.begin(); j != _cardapio.end(); j++){
-      if(nomes[i] == (*j).get_nome()){
+  for (unsigned long int i = 0; i < nomes.size(); i++)
+  {
+    for (auto j = _cardapio.begin(); j != _cardapio.end(); j++)
+    {
+      if (nomes[i] == (*j).get_nome())
+      {
         std::cout << (*j).descricao_produto();
       }
     }
   }
 }
 
-bool sort_vendas(unsigned int a, unsigned int b){
-  return a<b;
+bool sort_vendas(unsigned int a, unsigned int b)
+{
+  return a < b;
 }
 
 /* void Cardapio::mostrar_cardapio_mais_vendidos(){
@@ -106,35 +120,46 @@ bool sort_vendas(unsigned int a, unsigned int b){
   }
 } */
 
-void Cardapio::mostrar_cardapio_mais_vendidos(){
-  if(_cardapio.size()==0){
+void Cardapio::mostrar_cardapio_mais_vendidos()
+{
+  if (_cardapio.size() == 0)
+  {
     std::cout << "--------------------------------------------------\n";
     std::cout << "O cardápio está vazio.\n";
     return;
-  }else{
+  }
+  else
+  {
     std::vector<Produto> temp = _cardapio;
-    for(int i = 0; i<temp.size(); i++) {
-      for(int j = i+1; j<temp.size(); j++){
-        if(temp[j].get_vendidos() < temp[i].get_vendidos()) {
+    for (unsigned int i = 0; i < temp.size(); i++)
+    {
+      for (unsigned int j = i + 1; j < temp.size(); j++)
+      {
+        if (temp[j].get_vendidos() < temp[i].get_vendidos())
+        {
           Produto temporario = temp[i];
           temp[i] = temp[j];
           temp[j] = temporario;
         }
       }
     }
-    for(auto i = temp.begin(); i != temp.end(); i++){
+    for (auto i = temp.begin(); i != temp.end(); i++)
+    {
       std::cout << (*i).descricao_produto();
     }
   }
 }
 
-long unsigned int Cardapio::num_produtos(){
+long unsigned int Cardapio::num_produtos()
+{
   return _cardapio.size();
 }
 
-std::vector<std::string> Cardapio::get_nomes_produtos(){
+std::vector<std::string> Cardapio::get_nomes_produtos()
+{
   std::vector<std::string> nomes;
-  for(auto i = _cardapio.begin(); i != _cardapio.end(); i++){
+  for (auto i = _cardapio.begin(); i != _cardapio.end(); i++)
+  {
     nomes.push_back((*i).get_nome());
   }
   return nomes;

@@ -5,24 +5,25 @@
 #include <sstream>
 #include <vector>
 
-class Produto{
-  private:
-    std::string _nome;
-    double _preco;
-    unsigned int _vendidos = 0;
-    std::vector<int> historico_avaliacoes;
-    double _avaliacao;
+class Produto
+{
+private:
+  std::string _nome;
+  double _preco;
+  unsigned int _vendidos = 0;
+  std::vector<int> historico_avaliacoes;
+  double _avaliacao;
 
-  public:
-    Produto(std::string nome, double preco);
-    unsigned int get_vendidos();
-    std::string get_nome();
-    double get_preco();
-    double get_lucro();
-    double get_avaliacao();
-    void add_avaliacao(int nova_avaliacao);
-    void add_venda();
-    std::string descricao_produto();
+public:
+  Produto(std::string nome, double preco);
+  unsigned int get_vendidos();
+  std::string get_nome();
+  double get_preco();
+  double get_lucro();
+  double get_avaliacao();
+  void add_avaliacao(int nova_avaliacao);
+  void add_venda();
+  std::string descricao_produto();
 };
 
 #endif

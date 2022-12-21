@@ -21,7 +21,7 @@ double Restaurante::calcular_lucro_dia()
 std::vector<Produto> Restaurante::mais_lucrativos()
 {
     std::vector<Produto> maior_lucro;
-    
+
     for (long unsigned int i = 0; i < _cardapio.size(); i++)
     {
         maior_lucro.push_back(_cardapio[i]);

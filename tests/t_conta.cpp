@@ -35,7 +35,8 @@ TEST_CASE("Testa Contas"){
 
 #include "conta.h"
 
-TEST_CASE("Testa Contas"){
+TEST_CASE("Testa Contas")
+{
     Conta cliente1 = Conta("Marcelo", "senha", c_Cliente);
     CHECK_EQ("Marcelo", cliente1.get_nome());
     CHECK_EQ("senha", cliente1.get_senha());
@@ -65,8 +66,6 @@ TEST_CASE("Testa Contas"){
     CHECK_EQ("Star_Wars", cliente5.get_senha());
     CHECK_EQ(0, cliente5.get_cargo());
     CHECK_EQ("cliente", cliente5.get_cargo_txt());
-
-
 
     Conta func1 = Conta("José", "12345", c_Funcionario);
     CHECK_EQ("José", func1.get_nome());
@@ -98,8 +97,6 @@ TEST_CASE("Testa Contas"){
     CHECK_EQ(1, func5.get_cargo());
     CHECK_EQ("funcionário", func5.get_cargo_txt());
 
-
-
     Conta ger1 = Conta("Alberto", "password", c_Gerente);
     CHECK_EQ("Alberto", ger1.get_nome());
     CHECK_EQ("password", ger1.get_senha());
@@ -129,12 +126,4 @@ TEST_CASE("Testa Contas"){
     CHECK_EQ("Run_the_table", ger5.get_senha());
     CHECK_EQ(2, ger5.get_cargo());
     CHECK_EQ("gerente", ger5.get_cargo_txt());
-
-    /*Gerente ger1 = Gerente("Alberto", "password");
-    CHECK_EQ(2, ger1.get_cargo());
-    CHECK_EQ("gerente", ger1.get_cargo_txt());
-
-    Gerente ger2 = Gerente("Roberto", "rob44");
-    CHECK_EQ(2, ger2.get_cargo());
-    CHECK_EQ("gerente", ger2.get_cargo_txt());*/
 }

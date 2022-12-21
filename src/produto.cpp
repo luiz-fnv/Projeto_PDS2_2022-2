@@ -41,7 +41,7 @@ double Produto::get_avaliacao()
 
 void Produto::add_avaliacao(int nova_avaliacao)
 {
-    historico_avaliacoes.push_back(nova_avaliacao);
+  historico_avaliacoes.push_back(nova_avaliacao);
 }
 
 std::string Produto::descricao_produto()

@@ -60,14 +60,15 @@ Estado Pedido::get_estado()
 double Pedido::get_preco()
 {
     _preco_total = 0;
-    for(unsigned int i = 0; i<_lista_produtos.size(); i++)
+    for (unsigned int i = 0; i < _lista_produtos.size(); i++)
     {
         _preco_total += _lista_produtos[i].get_preco();
     }
     return _preco_total;
 }
 
-std::vector<Produto> Pedido::get_produtos(){
+std::vector<Produto> Pedido::get_produtos()
+{
     return _lista_produtos;
 }
 
