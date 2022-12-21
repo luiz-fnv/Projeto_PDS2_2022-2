@@ -4,7 +4,7 @@
 
 int main(){
   Banco_de_dados data;
-
+  
   data.inserir_conta("Gerente_a","12984",c_Gerente);
   data.inserir_conta("Funcionario_a","42710",c_Funcionario);
 
