@@ -4,7 +4,7 @@
 #include "produto.h"
 #include <iostream>
 
-// Enum dos tipos de estado para um pedido
+/// @brief Enum dos tipos de estado para um pedido
 enum Estado
 {
   preparacao,
@@ -13,51 +13,61 @@ enum Estado
   cancelado
 };
 
+/// @brief Classe responsável pela criação de pedidos e atividades relacionadas
 class Pedido
 {
 private:
-  // Lista de produtos que compõem o pedido
+  /// @brief Lista de produtos que compõem o pedido
   std::vector<Produto> _lista_produtos;
 
-  // Estado do pedido
+  /// @brief Estado do pedido
   Estado _estado;
 
-  // Endereço para ser entregue
+  /// @brief Endereço para ser entregue
   std::string _endereco_pedido;
 
-  // Preço total do pedido
+  /// @brief Preço total do pedido
   double _preco_total;
 
 public:
-  // Construtor do pedido
+  /// @brief Construtor do pedido
+  /// @param lista_produtos Lista de produtos que compõem o pedido
+  /// @param endereco_pedido Endereço para ser entregue
   Pedido(std::vector<Produto> lista_produtos, std::string endereco_pedido);
 
-  // Adiciona um produto ao pedido
-  void add_prod(Produto prod);
-
-  // Atualiza o preço quando um produto é adicionado
-  void atualiza_preco(Produto prod);
-
-  // Printa uma descrição, com nome, preço, avaliação e número de vendidos
-  void print_descricao_pedido();
-
-  // Retorna o endereço de entrega
+  /// @brief Retorna o endereço de entrega
+  /// @return Endereço de entrega
   std::string get_endereco();
 
-  // Retorna o estado do pedido
+  /// @brief Retorna o estado do pedido
+  /// @return Enum do estado do produto
   Estado get_estado();
 
-  // Retorna o preço
+  /// @brief Retorna o preço
+  /// @return Preço total do pedido
   double get_preco();
 
-  // Retorna os produtos presentes no pedido
-  std::vector<Produto> get_produtos();
-
-  // Atualiza o estado do pedido
+  /// @brief Atualiza o estado do pedido
+  /// @param novo Novo estado do pedido
   void mudar_estado(Estado novo);
 
-  // Avalia o pedido feito
+  /// @brief Retorna os produtos presentes no pedido
+  /// @return Vetor de produtos presentes no pedido
+  std::vector<Produto> get_produtos();
+
+  /// @brief Avalia o pedido feito
+  /// @param avaliacao A nova avaliação a ser adicionada
   void avalia_pedido(double avaliacao);
+
+  /// @brief Printa uma descrição, com nome, preço, avaliação e número de vendidos
+  void print_descricao_pedido();
+
+  /// @brief Adiciona um produto ao pedido
+  /// @param prod Produto a ser adicionado
+  void add_prod(Produto prod);
+
+  /// @brief Atualiza o preço quando um produto é adicionado
+  void atualiza_preco(Produto prod);
 };
 
 #endif

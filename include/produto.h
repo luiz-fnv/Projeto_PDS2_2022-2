@@ -5,54 +5,67 @@
 #include <sstream>
 #include <vector>
 
+/// @brief Classe produto
 class Produto
 {
 private:
-  // Nome do Produto
+  /// @brief Nome do Produto
   std::string _nome;
   
-  // Preço do Produto
-  double _preco;
-
-  // Vetor com as avaliações anteriores
-  std::vector<int> historico_avaliacoes;
-
-  // Quantidade de produtos vendidos
+  /// @brief Quantidade de produtos vendidos
   unsigned int _vendidos;
 
-  // Média das avaliações atribuídas
+  /// @brief Média das avaliações atribuídas
   double _avaliacao;
 
-public:
+  /// @brief Preço do Produto
+  double _preco;
 
-  // Construtor Padrão
+  /// @brief Vetor com as avaliações anteriores
+  std::vector<int> historico_avaliacoes;
+
+public:
+  /// @brief Construtor Padrão
+  /// @param nome Nome do produto
+  /// @param preco Preço do produto
   Produto(std::string nome, double preco);
 
-  // Construtor Completo
+  /// @brief Construtor Completo
+  /// @param nome Nome do produto
+  /// @param preco Preço do produto
+  /// @param vendidos Número de produtos vendidos
+  /// @param avaliacao Avaliação do produto
   Produto(std::string nome, double preco, unsigned int vendidos, double avaliacao);
 
-  // Retorna a quantidade de vendidos
+  /// @brief Retorna a quantidade de vendidos
+  /// @return Quantidade de produtos vendidos
   unsigned int get_vendidos();
 
-  // Retorna o preço do produto
+  /// @brief Retorna o preço do produto
+  /// @return Preço do produto
   double get_preco();
 
-  // Retorna o nome do produto
+  /// @brief Retorna o nome do produto
+  /// @return Nome do produto
   std::string get_nome();
 
-  // Retorna a média de avaliações do produto
+  /// @brief Retorna a média de avaliações do produto
+  /// @return Média de avaliações do produto
   double get_avaliacao();
 
-  // Adiciona uma nova avaliação ao produto
+  /// @brief Adiciona uma nova avaliação ao produto
+  /// @param nova_avaliacao Nova avaliação a ser inserida
   void add_avaliacao(int nova_avaliacao);
 
-  // Retorna a descição do produto, composta pelo nome, preço, avaliação e nº de vendas
+  /// @brief Retorna a descição do produto, composta pelo nome, preço, avaliação e nº de vendas
+  /// @return A descrição do produto
   std::string descricao_produto();
 
-  // Retorna o lucro com a venda do produto
+  /// @brief Retorna o lucro com a venda do produto
+  /// @return Lucro com a venda do produto
   double get_lucro();
 
-  // Indica que um produto foi vendido e computa essa venda
+  /// @brief Indica que um produto foi vendido e computa essa venda
   void add_venda();
 };
 

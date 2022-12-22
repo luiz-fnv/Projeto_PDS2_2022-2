@@ -4,30 +4,37 @@
 #include "produto.h"
 #include <vector>
 
+/// @brief Classe restaurante guarda o lucro a avaliação e o cardápio
 class Restaurante
 {
 private:
-  // Lucro obtido no dia
-  double _lucro;
 
   // Avaliação média do restaurante
-  double _avaliacao;
+  double _avaliacao; 
 
-  // Cardápio do restaurante -> Vetor de produtos
+  /// @brief Lucro obtido no dia
+  double _lucro;
+
+  /// @brief Cardápio do restaurante -> Vetor de produtos
   std::vector<Produto> _cardapio;
 
 public:
-
-  // Construtor
+  /// @brief Construtor
+  /// @param lucro Lucro obtido no dia
+  /// @param avaliacao Avaliação média do restaurante
+  /// @param _cardapio Cardápio do restaurante -> Vetor de produtos
   Restaurante(double lucro, double avaliacao, std::vector<Produto> _cardapio);
 
-  // Calcula o lucro no dia
+  /// @brief Calcula o lucro no dia
+  /// @return Lucro do dia
   double calcular_lucro_dia();
 
-  // Ordena os produtos descrescentemente de acordo com sua lucratividade
+  /// @brief Ordena os produtos descrescentemente de acordo com sua lucratividade
+  /// @return Vetor ordenado
   std::vector<Produto> mais_lucrativos();
 
-  // Ordena os produtos decrescentemente de acordo com o número de vendas
+  /// @brief Ordena os produtos decrescentemente de acordo com o número de vendas
+  /// @return Vetor ordenado
   std::vector<Produto> mais_vendidos();
 };
 

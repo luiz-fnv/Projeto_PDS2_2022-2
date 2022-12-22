@@ -9,39 +9,41 @@
 #include "produto.h"
 #include "restaurante.h"
 
+/// @brief Cardápio do restaurante: Conjunto de produtos 
 class Cardapio
 {
 private:
-  // Vetor de produtos
+  /// @brief Vetor de produtos
   std::vector<Produto> _cardapio;
 
 public:
 
-  // Inicia um cardápio padrão
+  /// @brief Inicia um cardápio padrão
   void padrao();
 
-  // Adiciona um produto ao cardápio
+  /// @brief Adiciona um produto ao cardápio
   void inserir_produto();
 
-  // Remove um produto do cardápio
+  /// @brief Remove um produto do cardápio
   void remover_produto();
 
-  // Retorna o cardápio
+  /// @brief Retorna o cardápio
+  /// @return Cardápio
   std::vector<Produto> get_cardapio();
 
-  // Mostra o cardápio em ordem alfabética
+  /// @brief Mostra o cardápio em ordem alfabética
   void mostrar_cardapio_alfabetico();
 
-  // Ordena e mostra o cardápio pelos mais vendidos
+  /// @brief Ordena e mostra o cardápio pelos mais vendidos
   void mostrar_cardapio_mais_vendidos();
 
-  // Retorna o número de produtos do cardápio
+  /// @brief Retorna o número de produtos do cardápio
+  /// @return Número de produtos no cardápio
   long unsigned int num_produtos();
   
-  // Retorna os nomes dos produtos
+  /// @brief Retorna os nomes dos produtos
+  /// @return // Nomes dos produtos no cardápio
   std::vector<std::string> get_nomes_produtos();
-
-  
 };
 
 #endif

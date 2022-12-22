@@ -5,7 +5,9 @@
 #include <iostream>
 #include "cardapio.h"
 
-// Enum de possíveis cargos
+
+/// @brief Enum de possíveis cargos
+
 enum Cargo
 {
   c_Cliente,
@@ -17,29 +19,36 @@ enum Cargo
 class Conta
 {
 protected:
-  // Nome da conta para login
+  /// @brief Nome da conta para login
   std::string _nome;
 
-  // Senha da conta
+  /// @brief Senha da conta
   std::string _senha;
 
-  // Tipo de cargo
+  /// @brief Tipo de cargo
   Cargo _cargo;
 
 public:
-  // Construtor da conta
+  /// @brief Construtor da conta
+  /// @param nome Nome do usuário
+  /// @param senha Senha do usuário
+  /// @param cargo Cargo do usuário
   Conta(std::string nome, std::string senha, Cargo cargo);
 
-  // Retorna o nome da conta
+  /// @brief  Retorna o nome da conta
+  /// @return Nome do usuário
   std::string get_nome() const;
 
-  // Retorna a senha da conta
+  /// @brief Retorna a senha da conta
+  /// @return Retorna a senha da conta
   std::string get_senha() const;
 
-  // Retorna o nome do cargo
+  /// @brief Retorna o nome do cargo
+  /// @return Cargo em string 
   std::string get_cargo_txt() const;
   
-  // Retorna o inteiro atribuído ao cargo no enum
+  /// @brief Retorna o inteiro atribuído ao cargo no enum
+  /// @return Inteiro referente ao cargo
   int get_cargo() const;
 };
 

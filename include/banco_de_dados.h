@@ -8,40 +8,49 @@
 #include "pedido.h"
 #include "cardapio.h"
 
+/// @brief Classe responsável pelo armazenamento de contas, pedidos e produtos
 class Banco_de_dados
 {
 public:
-  // Vetor de pedidos
+  /// @brief Vetor de pedidos
   std::vector<Pedido> BancoDePedidos;
 
-  // Vetor de Contas e suas operações
+  /// @brief Vetor de Contas e suas operações
   std::vector<Conta> _BancoDeContas;
 
-  // Objeto do tipo cardápio
+  /// @brief Objeto do tipo cardápio
   Cardapio _cardapio;
 
-  // Insere contas
+  /// @brief Insere contas
+  /// @param nome Nome do usuário
+  /// @param senha Senha atribuída à conta
+  /// @param cargo Cargo da pessoa: cliente, funcionário ou gerente
   void inserir_conta(std::string nome, std::string senha, Cargo cargo);
 
-  // Insere novo pedido
+  /// @brief Insere novo pedido
+  /// @param novo_pedido Pedido a ser inserido
   void inserir_pedido(Pedido novo_pedido);
 
-  // Método que cancela pedidos
+  /// @brief Método que cancela pedidos
+  /// @param indice Índice do pedido (no vetor) a ser cancelado
   void cancelar_pedido(int indice);
 
-  // Método para alteração de pedidos
+  /// @brief Método para alteração de pedidos
+  /// @param indice Índice do pedido (no vetor) a ser alterado
   void alterar_pedido(int indice);
 
-  // Chama métodos que criam um pedido
+  /// @brief Chama métodos que criam um pedido
   void criar_pedido();
 
-  // Mostra o estado dos pedidos
+  /// @brief  Mostra o estado dos pedidos
   void mostrar_pedidos();
 
-  // Retorna o objeto do tipo cardápio
+  /// @brief Retorna o objeto do tipo cardápio
+  /// @return Cardápio do Restuarante
   Cardapio get_cardapio(); 
 
-  // Retorna pedidos feitos
+  /// @brief Retorna pedidos feitos
+  /// @return Pedidos feitos
   std::vector<Pedido> get_pedidos();
 };
 
