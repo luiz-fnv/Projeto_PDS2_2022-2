@@ -56,6 +56,27 @@
 - Também é possível executar com o comando `make run` na linha de comando.
 - Através do comando `make tests` é possível fazer rodar os testes de unidade realizados no programa.
 
+## Entrega:
+
+- Foi entregue um arquivo .zip com as pastas referentes ao programa e à documentação.
+- O documento contém os seguintes itens:
+    - Pasta com toda a documentação HTML gerada pelo doxygen, para visualizar por completo, abrir o arquivo "pages"
+    - Arquivo com a documentação doxygen em pdf
+    - Arquivo com a documentação resumida em pdf
+    - Arquivo .txt com as instruções de execução e a explicação da entrega (o mesmo que está aqui)
+    - Pasta com o trabalho
+        - Pasta .vscode: Arquivo .json
+        - Pasta bin: Binários executáveis da main e dos testes
+        - Pasta build: Arquivos .o
+        - Pasta include: Arquivos fonte .h das classes criadas
+        - Pasta program: Arquivos main e tester .cpp para execução
+        - Pasta src: Arquivos fonte .cpp com as funções do programa
+        - Pasta tests: Testes de unidade
+        - Pasta third_party: Import da biblioteca doctest
+        - Arquivo .gitgnore para uso de .json
+        - Makefile
+        - Arquivo README.md com os User Stories e as instruções
+
 ## Integrantes:
 
 - Fábio da Silva Duarte
