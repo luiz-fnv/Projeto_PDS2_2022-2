@@ -4,7 +4,6 @@
 
 void Cardapio::padrao()
 {
-
   _cardapio.push_back(Produto("Hambúrguer", 10.00, 10, 4.3));
   _cardapio.push_back(Produto("Pizza", 40.00, 3, 4.2));
   _cardapio.push_back(Produto("Agua", 3.00, 12, 3.9));

@@ -4,6 +4,8 @@
 
 TEST_CASE("Testa Pedido")
 {
+    // Testa o Construtor dos pedidos
+
     Produto prod1 = Produto("Hambúrguer", 10.00);
     Produto prod2 = Produto("Pizza", 40.00);
     Produto prod3 = Produto("Agua", 3.00);
@@ -19,6 +21,8 @@ TEST_CASE("Testa Pedido")
 
     CHECK_EQ("Rua A", ped1.get_endereco());
     CHECK_EQ(50, ped1.get_preco());
+
+    // Checa os métodos de atualização de preço e estado
 
     ped1.add_prod(prod3);
     CHECK_EQ(53, ped1.get_preco());
@@ -91,6 +95,12 @@ TEST_CASE("Testa Pedido")
     CHECK_EQ(195, ped2.get_preco());
 
     CHECK_EQ(preparacao, ped2.get_estado());
+
+    ped2.mudar_estado(enviado);
+    CHECK_EQ(enviado, ped2.get_estado());
+
+    ped2.mudar_estado(concluido);
+    CHECK_EQ(concluido, ped2.get_estado());
 
     ped2.mudar_estado(enviado);
     CHECK_EQ(enviado, ped2.get_estado());

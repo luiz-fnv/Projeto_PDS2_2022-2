@@ -49,6 +49,8 @@ void Banco_de_dados::criar_pedido()
   std::getline(std::cin, endereco);
   Pedido pedido = Pedido(lista_produtos, endereco);
   inserir_pedido(pedido);
+  std::cout << " O seu pedido é:" << std::endl;
+  pedido.print_descricao_pedido();
 }
 
 void Banco_de_dados::mostrar_pedidos()

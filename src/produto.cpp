@@ -17,16 +17,6 @@ Produto::Produto(std::string nome, double preco, unsigned int vendidos, double a
   _avaliacao = avaliacao;
 }
 
-void Produto::set_avalicao(double nova_avaliacao)
-{
-  _avaliacao = nova_avaliacao;
-}
-
-void Produto::set_vendidos(double novo_vendidos)
-{
-  _vendidos = novo_vendidos;
-}
-
 unsigned int Produto::get_vendidos()
 {
   return _vendidos;

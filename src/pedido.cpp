@@ -58,3 +58,11 @@ void Pedido::mudar_estado(Estado novo)
 {
     _estado = novo;
 }
+
+void Pedido::avalia_pedido( double avaliacao)
+{
+    for(unsigned int i = 0; i<_lista_produtos.size(); i++)
+    {
+        _lista_produtos[i].add_avaliacao(avaliacao);
+    }
+}

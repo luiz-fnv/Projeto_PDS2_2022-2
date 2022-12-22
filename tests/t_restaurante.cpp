@@ -6,6 +6,8 @@
 
 TEST_CASE("Teste Restaurante")
 {
+    // Testa o construtor do Restaurante
+
     double lucro = 0;
     double avaliacao = 0;
     std::vector<Produto> cardapio;
@@ -81,6 +83,8 @@ TEST_CASE("Teste Restaurante")
 
 TEST_CASE("Testa vendidos")
 {
+    // Testa a atribuição de vendas e cálculo de lucro
+
     double lucro2 = 0;
     double avaliacao2 = 0;
     std::vector<Produto> cardapio2;

@@ -3,6 +3,8 @@
 
 TEST_CASE("Testa Login")
 {
+    // Testa as ferramentas utilizadas pela classe que realiza login
+
     Banco_de_dados banco;
     banco.inserir_conta("Pedro", "12345", c_Cliente);
     banco.inserir_conta("Mariana", "0101", c_Funcionario);

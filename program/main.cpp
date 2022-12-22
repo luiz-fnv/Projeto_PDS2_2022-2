@@ -70,8 +70,11 @@ int main()
         }
         case 3:
         {
+          int avaliacao;
           std::cout << "Esperamos que tenha tido uma boa experiência! Avalie seu pedido com uma nota de 1 a 5" << std::endl;
-          // COMO AVALIAR OS PRODUTOS SEPARADAMENTE??
+          std::cin >> avaliacao;
+          unsigned int ultimo = data.BancoDePedidos.size();
+          data.BancoDePedidos[ultimo - 1].avalia_pedido(avaliacao);
           break;
         }
         case 4:

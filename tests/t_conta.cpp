@@ -4,6 +4,8 @@
 
 TEST_CASE("Testa Contas")
 {
+    // Testa a Criação de contas e o construtor dessa classe
+
     Conta cliente1 = Conta("Marcelo", "senha", c_Cliente);
     CHECK_EQ("Marcelo", cliente1.get_nome());
     CHECK_EQ("senha", cliente1.get_senha());

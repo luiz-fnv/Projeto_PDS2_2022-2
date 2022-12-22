@@ -4,6 +4,8 @@
 
 TEST_CASE("Testa Produto")
 {
+    // Testa o construtor do produto
+
     Produto prod1 = Produto("Hambúrguer", 10.00);
 
     CHECK_EQ("Hambúrguer", prod1.get_nome());
@@ -11,6 +13,8 @@ TEST_CASE("Testa Produto")
     CHECK_EQ(0, prod1.get_avaliacao());
     CHECK_EQ(0, prod1.get_vendidos());
     CHECK_EQ(0, prod1.get_lucro());
+
+    // Testa a avaliação do produto
 
     prod1.add_avaliacao(5); // a1
     CHECK_EQ(5, prod1.get_avaliacao());
